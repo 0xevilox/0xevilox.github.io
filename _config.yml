@@ -19,7 +19,7 @@ title: 404 Thoughts
 tagline: Code doesn't lie. People do
 
 description: >- # used by seo meta and the atom feed
-  A minimal, responsive and feature-rich Jekyll theme for technical writing.
+  404 Thoughts is a blog that explains programming concepts clearly, helps you solve coding problems and design better solution.
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
@@ -30,6 +30,9 @@ github:
 
 twitter:
   username: Mr__Leo__ # change to your Twitter username
+
+leetcode:
+   username: 0x6C656F
 
 social:
   # Change to your full name.
@@ -95,7 +98,7 @@ theme_mode: #[light | dark]
 # will be added to all media resources (site avatar, posts' images, audio and video files) paths starting with '/'
 #
 # e.g. 'https://cdn.com'
-cdn:
+cdn: 
 
 # the avatar on sidebar, support local or CORS resources
 avatar:
