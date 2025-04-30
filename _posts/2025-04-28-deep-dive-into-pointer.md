@@ -1,5 +1,5 @@
 ---
-title: Deep Dive into Pointers: Unleashing the Power of C
+title: Deep Dive into Pointers Unleashing the Power of C
 description: In this blog, we will explore the power of pointers in C
 author: Vignesh
 date: 2025-04-28 12:00:00
@@ -9,15 +9,17 @@ pin: false
 math: true
 mermaid: true
 image:
-    path: /_postImage/pointers.png
-    thumbnail: /_postImage/pointers.png;
-    alt: Pointers in C Programming 
+    path: /commons/Thumnails/pointers.png
+    lqip: data:image/png;base64,L2NvbW1vbnMvVGh1bW5haWxzL3BvaW50ZXJzLnBuZw==
+    alt: "Pointers in C Programming" 
 ---
 
 
 # Deep Dive into Pointers: Unleashing the Power of C
 
 ## Introduction
+
+<img src="https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/pointers.png" alt="pointers in c" />
 
 Hey Guys, Welcome to this blog!
 
