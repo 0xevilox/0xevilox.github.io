@@ -19,8 +19,6 @@ image:
 
 ## Introduction
 
-<img src="https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/pointers.png" alt="pointers in c" />
-
 Hey Guys, Welcome to this blog!
 
 In this blog we're going to learn about the **basics of a pointer** and how to **use a pointer in C**. We’ll also look at the history behind pointers, why we use them, and some **common pitfalls** to avoid.
