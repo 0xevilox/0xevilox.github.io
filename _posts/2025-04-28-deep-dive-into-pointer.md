@@ -58,7 +58,7 @@ This idea is actually present in the CPU registers. if you take a look at the re
 
 <center>
 
-<img src="https://github.com/0xevilox/0xevilox.github.io/blob/main/_posts/_postImage/Pointer_1.png" width="600" height="300" alt="Pointer in C Programming"/>
+<img src="https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/Pointer_1.png" width="600" height="300" alt="Pointer in C Programming"/>
 
 </center>
 
