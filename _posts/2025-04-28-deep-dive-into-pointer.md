@@ -58,7 +58,7 @@ This idea is actually present in the CPU registers. if you take a look at the re
 
 <center>
 
-<img src="/_postImage/Pointer_1.png" width="600" height="300" alt="Pointer in C Programming"/>
+<img src="https://github.com/0xevilox/0xevilox.github.io/blob/main/_posts/_postImage/Pointer_1.png" width="600" height="300" alt="Pointer in C Programming"/>
 
 </center>
 
@@ -116,7 +116,7 @@ Output:
 
 <center>
 
-<img src="/_postImage/pointer_2.png" alt="Pointer in c"/>
+<img src="https://github.com/0xevilox/0xevilox.github.io/blob/main/_posts/_postImage/pointer_2.png alt="Pointer in c"/>
 
 </center>
 
@@ -135,7 +135,7 @@ int main(void)
 Now both ```a``` and ```ptr``` has the same value. So, if change for one, it will affect the other because you are directly manipulating the memory and here the a points to the ptr. 
 <center>
 
-<img src="/_postImage/Pointer_3.png" alt="Pointer in C"/>
+<img src="https://github.com/0xevilox/0xevilox.github.io/blob/main/_posts/_postImage/Pointer_3.png" alt="Pointer in C"/>
 
 </center>
 
@@ -162,7 +162,7 @@ In this code, if you take a look, both ```ptr``` and ```htr``` have same address
 
 <center>
 
-<img src="/_postImage/Pointer_4.png" alt="Pointer in C"/>
+<img src="https://github.com/0xevilox/0xevilox.github.io/blob/main/_posts/_postImage/Pointer_4.png" alt="Pointer in C"/>
 
 </center>
 
@@ -187,7 +187,7 @@ Output:
 
 <center>
 
-<img src="/_postImage/Pointer_5.png" alt="Pointer in C"/>
+<img src="https://github.com/0xevilox/0xevilox.github.io/blob/main/_posts/_postImage/Pointer_5.png" alt="Pointer in C"/>
 
 </center>
 
@@ -220,7 +220,7 @@ Output:
 
 <center>
 
-<img src="/_postImage/Pointer_6.png" alt="Pointer in C"/>
+<img src="https://github.com/0xevilox/0xevilox.github.io/blob/main/_posts/_postImage/Pointer_6.png" alt="Pointer in C"/>
 
 </center>
 
@@ -250,7 +250,7 @@ Output:
 
 <center>
 
-<img src="/_postImage/Pointer_7.png" alt="Pointer in C"/>
+<img src="https://github.com/0xevilox/0xevilox.github.io/blob/main/_posts/_postImage/Pointer_7.png" alt="Pointer in C"/>
 
 </center>
 
@@ -311,7 +311,7 @@ Output:
 
 <center>
 
-<img src="/_postImage/Pointer_8.png" alt="Pointer in C"/>
+<img src="https://github.com/0xevilox/0xevilox.github.io/blob/main/_posts/_postImage/Pointer_8.png" alt="Pointer in C"/>
 
 </center>
 
