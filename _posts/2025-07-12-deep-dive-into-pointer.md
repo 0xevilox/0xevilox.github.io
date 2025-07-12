@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Deep Dive into Pointers Unleashing the Power of C"
+description: "In this blog, we will explore the power of pointers in C"
 date: 2025-07-10 3:00:00
 author: Vignesh
 categories: [Pointer,C]

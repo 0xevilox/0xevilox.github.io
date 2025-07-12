@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Understanding Bubble Sort: More Than Just Code"
+description: "Understand Bubble Sort like never before! With real-world analogies, dry runs, and detailed logic explained clearly for beginners"
 date: 2025-07-12 5:00:00
 author: Vignesh
 categories: [Problem Solving,Alogrithm]
