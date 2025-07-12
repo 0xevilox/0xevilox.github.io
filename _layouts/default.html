@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="icon" href="{{ site.baseurl }}/assets/images/logo.png">
+
+<title>{{ page.title }} | {{site.name}}</title>
+
+{% seo %}
+    
+<link href="{{ site.baseurl }}/assets/css/prism.css" rel="stylesheet">
+
+<link href="{{ site.baseurl }}/assets/css/theme.css" rel="stylesheet">
+
+<script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
+
+</head>
+
+{% if jekyll.environment == 'production' %}
+<!-- change your GA id in _config.yml -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{site.google_analytics}}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '{{site.google_analytics}}');
+</script>
+{% endif %}
+
+{% capture layout %}{% if page.layout %}layout-{{ page.layout }}{% endif %}{% endcapture %}
+<body>
+	<!-- defer loading of font and font awesome -->
+	<noscript id="deferred-styles">
+		<link href="https://fonts.googleapis.com/css?family=Sen:400,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	</noscript>
+
+<!-- Begin Sidebar Navigation
+================================================== -->
+
+<!-- Hamburger Toggle Button (visible on mobile only) -->
+<div class="mobile-nav-toggle" id="mobileNavToggle">&#9776;</div>
+
+<!-- Overlay for background -->
+<div id="mobileOverlay" class="mobile-overlay"></div>
+<div class="mobile-header-title" id="mobileHeaderTitle">
+    <img src="{{ site.baseurl }}/assets/images/0xevilox.png" alt="0xevilox" />
+</div>
+<!-- Sidebar Navigation (mobile only) -->
+<nav class="mobile-sidebar" id="mobileSidebar">
+  <ul>
+    <li><a href="{{ site.baseurl }}/">Home</a></li>
+        <li><a href="{{ site.baseurl }}/privacy-policy">Privacy Policy</a></li>
+         <li><a href="{{ site.baseurl }}/terms-and-conditions">Terms and Conditions</a></li>
+        <li><a href="{{ site.baseurl }}/about-me">About Me<span class="badge badge-primary"></a></li>
+        <li><a href="{{ site.baseurl }}/contact">Contact Me</a></li>
+  </ul>
+</nav>
+<nav class="horizontal-nav" id="navbar">
+    <ul class="nav-list">
+        <li><a href="{{ site.baseurl }}/">Home</a></li>
+        <li><a href="{{ site.baseurl }}/privacy-policy">Privacy Policy</a></li>
+         <li><a href="{{ site.baseurl }}/terms-and-conditions">Terms and Conditions</a></li>
+        <li><a href="{{ site.baseurl }}/about-me">About Me<span class="badge badge-primary"></a></li>
+        <li><a href="{{ site.baseurl }}/contact">Contact Me</a></li>
+    </ul>
+</nav>
+
+
+
+
+
+<!-- {% include search-lunr.html %} -->
+<div class="search-box">
+    {% include search-lunr.html %}
+</div>
+
+<!-- End Sidebar Navigation
+================================================== -->
+
+<div class="site-content {% if page.url == '/' %} firstpage {% endif %}">
+
+<div class="container">
+
+   
+   
+
+    <!-- Site Tag
+    ================================================== -->
+    <!-- {% if page.url == '/' %}
+        <p class="sitetag">
+            {{ site.description }}
+        </p>
+    {% endif %} -->
+
+    <!-- Content
+    ================================================== -->
+    <div class="main-content">
+        {{ content }}
+    </div>
+
+    {% if site.mailchimp-list %}
+    <!-- Newsletter
+    ================================================== -->
+    <div class="newsletter text-center">
+        <span class="h4"><img src="{{ site.baseurl }}/{{ site.logo }}" class="newsletter-logo" alt="{{site.title}}"> &nbsp; Never miss a <b>story</b> from us, subscribe to our newsletter</span>
+        
+        <style>
+  .simple-subscribe-form {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+  }
+
+  .simple-subscribe-form input[type="email"] {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 220px;
+  }
+
+  .simple-subscribe-form input[type="submit"] {
+    padding: 8px 16px;
+    font-size: 14px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .simple-subscribe-form input[type="submit"]:hover {
+    background-color: #333;
+  }
+</style>
+
+<form action="https://api.follow.it/subscription-form/Z0tXLytHU004TjdKT040bXhmem9XTjNiN1hMcUVaRzNyMFhDclo5dGwwRzIxVnhlM0dJK2pmTEVOYi9icnZaNVRMV0wvZGc4VnQ2T2hmc0pHRkZRanFLSC9hSnhZVVo1NHVTYXZCR0tzU2RzWWF6Ymt5TytHMHRkYmZWMGRFUUp8N3JRRGV4Q2k5UFczUXdFOC9lZGRZWTNDVWhBZGlJdjFURGFTd0lvRFl2ST0=/8" method="post" class="simple-subscribe-form">
+  <input type="email" name="email" placeholder="Your e-mail" required>
+  <input type="submit" value="Subscribe">
+</form>
+
+    {% endif %}
+    
+</div>
+
+<!-- Begin Footer
+================================================== -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-12 text-center text-lg-left">
+                Copyright © {{ site.time | date: "%Y" }} {{ site.name }} 
+            </div>
+            <div class="col-md-6 col-sm-12 text-center text-lg-right">    
+                <a target="_blank" href="https://www.0xevilox.github.io">0xevilox</a> by Vignesh
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End Footer
+================================================== -->
+
+</div> <!-- /.site-content -->
+
+<!-- Scripts (if you need bootstrap.js, please add it yourself. I didn't use it for performance reasons, it was not needed in this theme)
+================================================== -->
+
+<script src="{{ site.baseurl }}/assets/js/prism.js"></script>
+
+<script src="{{ site.baseurl }}/assets/js/theme.js"></script>
+
+{% if site.lazyimages == "enabled" %}
+<script src="{{ site.baseurl }}/assets/js/lazyload.js"></script>
+{% endif %}
+
+{% if page.layout == 'post' %}
+<script id="dsq-count-scr" src="//{{site.disqus}}.disqus.com/count.js"></script>
+{% endif %}
+<script>
+   const toggleBtn = document.getElementById('mobileNavToggle');
+  const sidebar = document.getElementById('mobileSidebar');
+  const overlay = document.getElementById('mobileOverlay');
+
+  toggleBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+    overlay.classList.toggle('active');
+  });
+
+  overlay.addEventListener('click', () => {
+    sidebar.classList.remove('active');
+    overlay.classList.remove('active');
+  });
+</script>
+</body>
+</html>

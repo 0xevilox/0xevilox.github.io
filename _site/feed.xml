@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Problem Solving with Code</title>
+    <description>This blog covers programming, problem solving, DSA, and low-level system design. Explore tutorials, tips, and insights to enhance your coding skills and tackle complex challenges.</description>
+    <link>http://localhost:4000/0xevilox-blog/</link>
+    <atom:link href="http://localhost:4000/0xevilox-blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 12 Jul 2025 17:01:00 +0530</pubDate>
+    <lastBuildDate>Sat, 12 Jul 2025 17:01:00 +0530</lastBuildDate>
+    <generator>Jekyll v4.4.1</generator>
+    
+      <item>
+        <title>Understanding Bubble Sort: More Than Just Code</title>
+        <description>&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;Hey guys, welcome to my blog! This is actually my first post in the problem-solving series. In this post, we’re going to look at a sorting algorithm called Bubble Sort.&lt;/p&gt;
+
+&lt;p&gt;Now wait — I know you’ve &lt;strong&gt;already seen bubble sort in many tutorials&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;But here, I want to share it in a different way:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;How to think about the logic&lt;/li&gt;
+  &lt;li&gt;How it works step by step&lt;/li&gt;
+  &lt;li&gt;How to optimize the code&lt;/li&gt;
+  &lt;li&gt;Why do we do that?&lt;/li&gt;
+  &lt;li&gt;How to understand it mathematically.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Before diving into the bubble sort, there’s something important.&lt;/p&gt;
+
+&lt;p&gt;We need to understand &lt;strong&gt;computer science&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Computer science&lt;/strong&gt; is the study of information – how it’s represented and how it’s computed.&lt;/p&gt;
+
+&lt;h2 id=&quot;why-are-we-learning-the-bubble-sort-and-all-these-basic-algorithms&quot;&gt;Why are we learning the bubble sort and all these basic algorithms?&lt;/h2&gt;
+
+&lt;p&gt;Because &lt;strong&gt;bubble sort&lt;/strong&gt; is one of the fundamental algorithms in &lt;strong&gt;computer science&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;so-what-is-an-algorithm&quot;&gt;So, What is an algorithm?&lt;/h2&gt;
+
+&lt;p&gt;The algorithm is a very, very precise set of instructions designed to solve a computational problem. It takes a set of inputs to produce a set of outputs within a finite amount of time.&lt;/p&gt;
+
+&lt;p&gt;And algorithms aren’t just for computers. We actually use algorithms in our daily lives, too.&lt;/p&gt;
+
+&lt;h3 id=&quot;daily-life-analogy-of-algorithms&quot;&gt;Daily Life Analogy of Algorithms&lt;/h3&gt;
+
+&lt;p&gt;For example: How do you brush your teeth?&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;You walk to the bathroom&lt;/li&gt;
+  &lt;li&gt;You take the brush and rinse it in the sink&lt;/li&gt;
+  &lt;li&gt;Then you apply the toothpaste and brush your teeth&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;precise-vs-vague-instructions&quot;&gt;Precise vs Vague Instructions&lt;/h3&gt;
+
+&lt;p&gt;But if you notice, these steps are vague. I haven’t given the precise instruction because you use your common sense, but computers don’t.&lt;/p&gt;
+
+&lt;p&gt;Computers are literally dumb. They need precise, not only just precise, but very accurate instructions.&lt;/p&gt;
+
+&lt;p&gt;If you don’t give the extract steps, the program crashes.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-does-the-precise-algorithm-look&quot;&gt;How does the precise algorithm look?&lt;/h2&gt;
+
+&lt;p&gt;For example: How do you teach your computer to brush your teeth?&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Wake up from bed&lt;/li&gt;
+  &lt;li&gt;Walk a few steps to reach the bathroom&lt;/li&gt;
+  &lt;li&gt;Take the toothbrush and toothpaste from the left corner shelf&lt;/li&gt;
+  &lt;li&gt;Rinse the brush in the sink&lt;/li&gt;
+  &lt;li&gt;Apply the toothpaste to the brush&lt;/li&gt;
+  &lt;li&gt;Close your toothpaste&lt;/li&gt;
+  &lt;li&gt;Brush your teeth:
+    &lt;ul&gt;
+      &lt;li&gt;Upper teeth 4 times&lt;/li&gt;
+      &lt;li&gt;lower teeth 4 times, etc..&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Rinse your mouth with water&lt;/li&gt;
+  &lt;li&gt;Rinse toothbrush&lt;/li&gt;
+  &lt;li&gt;Return the toothbrush and toothpaste to the shelf&lt;/li&gt;
+  &lt;li&gt;Done&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So this &lt;strong&gt;precise algorithm&lt;/strong&gt; looks like&lt;/p&gt;
+
+&lt;p&gt;But even here, &lt;strong&gt;I’ve left out a few important steps&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-if-you-didnt-close-the-bathroom-door&quot;&gt;What if you didn’t close the bathroom door?&lt;/h2&gt;
+
+&lt;p&gt;Someone might walk in and interrupt you – that’s an &lt;strong&gt;unexpected behavior&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;In Programming, we call that a &lt;strong&gt;bug&lt;/strong&gt; – when your program doesn’t handle a certain situation correctly and ends up doing &lt;strong&gt;something wrong or even crashing&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;why-am-i-saying-all-this-to-you&quot;&gt;Why am I saying all this to you?&lt;/h2&gt;
+
+&lt;p&gt;Because you need to think, not just memorize.&lt;/p&gt;
+
+&lt;p&gt;Don’t just blindly cram bubble sort for a random tech interview. Instead, understand what it actually is–how it works, why it matters, and what it teaches you about problem-solving.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-bubble-sort&quot;&gt;What is Bubble Sort?&lt;/h2&gt;
+&lt;p&gt;Bubble Sort is a simple sorting algorithm that compares pairs of adjacent elements and swaps them if they are in the wrong order. This process will be repeated until the array is sorted either in increasing or decreasing order.&lt;/p&gt;
+
+&lt;h2 id=&quot;bubble-sort-analogy&quot;&gt;Bubble Sort Analogy&lt;/h2&gt;
+&lt;p&gt;Imagine in the school, the students are standing in a prayer line or something like a class photo.
+The teacher wants to arrange the students in order based on height. If someone is shorter, they will go in front. Someone is the tallest they will go back.&lt;/p&gt;
+
+&lt;p&gt;This will be repeated until the shortest student goes forward and the tallest student goes backward.&lt;/p&gt;
+
+&lt;p&gt;In each round, the tallest student “bubbles up” to the end like a bubble rising to the surface in water.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-does-it-work&quot;&gt;How does it work?&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;First, let’s take the unsorted data from the user, for example: {6,4,5,3,2,1};&lt;/li&gt;
+  &lt;li&gt;Next, compare a pair of adjacent elements; if the first is larger than the second element, swap the elements. i.e, if a&lt;sub&gt;j&lt;/sub&gt; &amp;gt; a&lt;sub&gt;j+1&lt;/sub&gt;, then swap a&lt;sub&gt;j&lt;/sub&gt; and a&lt;sub&gt;j+1&lt;/sub&gt;.&lt;/li&gt;
+  &lt;li&gt;Repeat until the array is sorted.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;It looks simple, right? Let’s briefly explain how bubble sort works.&lt;/p&gt;
+
+&lt;p&gt;First, let take the unsorted data: {6,4,5,3,2,1}. To sort this list using bubble sort, we need to compare and swap the elements repeatedly until the entire list is in order.&lt;/p&gt;
+
+&lt;h2 id=&quot;do-we-need-to-use-the-loop&quot;&gt;Do we need to use the loop?&lt;/h2&gt;
+
+&lt;p&gt;In this case, we use two loops: one is the outer loop and the other is the inner loop.&lt;/p&gt;
+
+&lt;p&gt;The outer loop iterates over the elements multiple times, while the inner loop performs the comparisons.&lt;/p&gt;
+
+&lt;h2 id=&quot;why-are-we-using-the-two-loops&quot;&gt;Why are we using the two loops?&lt;/h2&gt;
+
+&lt;p&gt;Because we need to compare each and every element, if we use a single loop, only one element gets sorted; the others do not get sorted.&lt;/p&gt;
+
+&lt;p&gt;Let’s start with iteration. In the first iteration, where i = 0 and i &amp;lt; n, we start comparing elements from the beginning.&lt;/p&gt;
+&lt;center&gt;
+
+&lt;img src=&quot;./_postImage/first_iteration.png&quot; alt=&quot;First iteration of the Bubble Sort algorithm visualized by 0xevilox, showing initial element comparisons and swaps.&quot; /&gt;
+
+&lt;/center&gt;
+
+&lt;p&gt;Let’s go through the first pass of the bubble sort step by step using the list:&lt;/p&gt;
+
+&lt;p&gt;We start with &lt;strong&gt;i = 0 (first iteration)&lt;/strong&gt;, and we’ll compare each pair of neighboring elements using an inner loop.&lt;/p&gt;
+
+&lt;p&gt;You may be &lt;strong&gt;wondering what j and j + 1 are&lt;/strong&gt;. Basically, j represents the current element, and j + 1 is the neighboring element that it’s being compared with.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Compare 6 and 5
+    &lt;ul&gt;
+      &lt;li&gt;Since 6 is greater than 5, swap the elements.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Compare 6 and 4
+    &lt;ul&gt;
+      &lt;li&gt;Since 6 is greater than 4, swap the elements.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Compare 6 and 3
+    &lt;ul&gt;
+      &lt;li&gt;Since 6 is greater than 3, swap the elements.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Compare 6 and 2
+    &lt;ul&gt;
+      &lt;li&gt;Since 6 is greater than 2, swap the elements.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Compare 6 and 1
+    &lt;ul&gt;
+      &lt;li&gt;Since 6 is greater than 1, swap the elements.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Now you can clearly see that the &lt;strong&gt;largest element moves towards the end&lt;/strong&gt;, just like a &lt;strong&gt;bubble rising to the surface&lt;/strong&gt; (when you boil the water). 
+That’s why it’s called &lt;strong&gt;bubble sort.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Next, we move to the second iteration, **i = 1 **&lt;/p&gt;
+
+&lt;p&gt;In the second iteration, we take the list {5,4,3,2,1,6}, which is the result after the first iteration.&lt;/p&gt;
+
+&lt;center&gt;
+
+&lt;img src=&quot;./_postImage/second_iteration.png&quot; alt=&quot;Second iteration of the Bubble Sort algorithm by 0xevilox, highlighting progress as larger elements bubble toward the end.&quot; /&gt;
+
+&lt;/center&gt;
+
+&lt;p&gt;Here, you can clearly see that the last number will largest. So, in every iteration, the biggest number goes to the last.&lt;/p&gt;
+
+&lt;p&gt;Let’s start the second iteration.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Compare 5 and 4.
+    &lt;ul&gt;
+      &lt;li&gt;Since 5 is greater than 4, swap the elements.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Compare 5 and 3.
+    &lt;ul&gt;
+      &lt;li&gt;Since 5 is greater than 3, swap the elements.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Compare 5 and 2.
+    &lt;ul&gt;
+      &lt;li&gt;Since 5 is greater than 2, swap the elements.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Compare 5 and 1
+    &lt;ul&gt;
+      &lt;li&gt;Since 5 is greater than 1, swap the elements.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In this case, we don’t compare the 5 and 6 because 6 is already in its correct (sorted) position.&lt;/p&gt;
+
+&lt;p&gt;To avoid comparing with elements that are already sorted at the end of the list, we use the condition j &amp;lt; n-i-1 in the inner loop.&lt;/p&gt;
+
+&lt;p&gt;This condition ensures that with each iteration of the outer loop (i), we reduce the number of comparisons, since the largest elements have already “bubbled up to the end.&lt;/p&gt;
+
+&lt;p&gt;For example:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;In the first iteration, i = 0 so the condition becomes j &amp;lt;  n - 0 - 1 -&amp;gt; j &amp;lt; n - 1.&lt;/li&gt;
+  &lt;li&gt;In the second iteration, i = 1, so the condition becomes j &amp;lt; n - 1 - 1 -&amp;gt; j &amp;lt; n - 2.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In a nutshell, this &lt;strong&gt;condition helps to avoid unnecessary comparison&lt;/strong&gt; within the elements that are already sorted at the end of the list. With each pass, the biggest number settles in place, so the inner loop doesn’t need to check those again.&lt;/p&gt;
+
+&lt;p&gt;For example: {5,4,3,2,1,6}, where n = 6;&lt;/p&gt;
+
+&lt;p&gt;So n-2 = 4, meaning the inner loop only checks up to the 4 index and doesn’t compare with the already sorted 6 at the end.&lt;/p&gt;
+
+&lt;p&gt;This is a simple form of &lt;strong&gt;optimization in bubble sort&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;In the third iteration, we take the list {4,3,2,1,5,6}, which is the result after the second iteration.&lt;/p&gt;
+&lt;center&gt;
+
+&lt;img src=&quot;./_postImage/third_iteration.png&quot; alt=&quot;Third iteration of the Bubble Sort algorithm by 0xevilox, illustrating fewer swaps as elements near their sorted positions.&quot; /&gt;
+
+&lt;/center&gt;
+&lt;p&gt;Next, in the third iteration.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Compare 4 and 3
+    &lt;ul&gt;
+      &lt;li&gt;Since 4 is greater than 3, swap the elements.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Compare 4 and 2.
+    &lt;ul&gt;
+      &lt;li&gt;Since 4 is greater than 2, swap the elements.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Compare 4 and 1.
+    &lt;ul&gt;
+      &lt;li&gt;Since 4 is greater than 1, swap the elements.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In the fourth iteration, we take the list {3,2,1,4,5,6}, which is the result after the third iteration.&lt;/p&gt;
+&lt;center&gt;
+
+&lt;img src=&quot;./_postImage/fourth_iteration.png&quot; alt=&quot;Fourth iteration of the Bubble Sort algorithm by 0xevilox, showing minimal comparisons as the list approaches a sorted state.&quot; /&gt;
+
+&lt;/center&gt;
+&lt;p&gt;Next, we compare the elements again in the fourth iteration&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Compare 3 and 2
+    &lt;ul&gt;
+      &lt;li&gt;Since 3 is greater than 2, swap the elements.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Compare 3 and 1
+    &lt;ul&gt;
+      &lt;li&gt;Since 3 is greater than 1, swap the elements.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In the fifth iteration, we take the list {2,1,3,4,5,6}, which is the result after the fourth iteration.&lt;/p&gt;
+
+&lt;center&gt;
+
+&lt;img src=&quot;./_postImage/fifith_iteration.png&quot; alt=&quot;Fifth and final iteration of the Bubble Sort algorithm by 0xevilox, where the array is fully sorted with no further swaps needed.&quot; /&gt;
+
+&lt;/center&gt;
+
+&lt;p&gt;In the fifth iteration.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Compare 2 and 1
+    &lt;ul&gt;
+      &lt;li&gt;Since 2 is greater than 1, swap the elements.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Now your array has been successfully sorted.&lt;/p&gt;
+
+&lt;p&gt;After there is no swap, the loop gets terminated, and you get the sorted array or list.&lt;/p&gt;
+
+&lt;h2 id=&quot;final-thoughts&quot;&gt;Final Thoughts:&lt;/h2&gt;
+&lt;p&gt;So that’s how bubble sort works. I hope you now understand this algorithm better. In the next post, we’ll see how to implement it, analyze its performance, and explore ways to optimize the code.&lt;/p&gt;
+
+&lt;p&gt;I also hope this post didn’t just explain what bubble sort is, but also gave you a clearer idea of what an algorithm is and how to think about problem-solving. Remember, a learning algorithm isn’t about memorizing steps or rushing to pass an interview.&lt;/p&gt;
+
+&lt;p&gt;It’s about building your problem-solving mindset and understanding how computers really work.&lt;/p&gt;
+
+&lt;p&gt;“Enjoyed this guide? You can support me on Buy Me a Coffee — it helps me keep writing practical tutorials like this.&lt;/p&gt;
+
+&lt;center&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js&quot; data-name=&quot;bmc-button&quot; data-slug=&quot;tamilcode&quot; data-color=&quot;#5F7FFF&quot; data-emoji=&quot;☕&quot; data-font=&quot;Lato&quot; data-text=&quot;Buy me a coffee&quot; data-outline-color=&quot;#000000&quot; data-font-color=&quot;#ffffff&quot; data-coffee-color=&quot;#FFDD00&quot;&gt;&lt;/script&gt;
+&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Thanks for reading and happy coding…………………………💻&lt;/p&gt;
+</description>
+        <pubDate>Sat, 12 Jul 2025 10:30:00 +0530</pubDate>
+        <link>http://localhost:4000/0xevilox-blog/bubble-sort-explained-for-beginners/</link>
+        <guid isPermaLink="true">http://localhost:4000/0xevilox-blog/bubble-sort-explained-for-beginners/</guid>
+        
+        <category>Problem Solving</category>
+        
+        
+        <category>Problem Solving</category>
+        
+        <category>Alogrithm</category>
+        
+      </item>
+    
+      <item>
+        <title>Deep Dive into Pointers Unleashing the Power of C</title>
+        <description>&lt;h1 id=&quot;deep-dive-into-pointers-unleashing-the-power-of-c&quot;&gt;Deep Dive into Pointers: Unleashing the Power of C&lt;/h1&gt;
+
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;Hey Guys, Welcome to this blog!&lt;/p&gt;
+
+&lt;p&gt;In this blog we’re going to learn about the &lt;strong&gt;basics of a pointer&lt;/strong&gt; and how to &lt;strong&gt;use a pointer in C&lt;/strong&gt;. We’ll also look at the history behind pointers, why we use them, and some &lt;strong&gt;common pitfalls&lt;/strong&gt; to avoid.&lt;/p&gt;
+
+&lt;p&gt;So let’s dive deep into the world of pointers!&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-pointer&quot;&gt;What is Pointer?&lt;/h2&gt;
+
+&lt;p&gt;Pointer is nothing but a variable that stores the memory address of another variable or object Woooo! What does that mean?
+Before diving into the pointer, we need to understand some basics about how memory works and represented in under the hood.&lt;/p&gt;
+
+&lt;p&gt;Before moving on to that, what is Computer Science?
+Computer Science is all about the study information,computation, and how information is represented, right?
+Information represented in the memory as the binary form&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-c&quot;&gt;for eg:
+int x = 10;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;How would this been respresented in the memory?&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-c&quot;&gt;000001010
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Because computers understand only 0s and 1s, everything you see on the computer screen is just information represented in the binary form in memory.
+In modern computers, memory(RAM) is divided into the bytes, which are capable of the storing eight bits of information. Each bytes has the unique address.&lt;/p&gt;
+
+&lt;p&gt;For example, if there are x numbers of memory in the computer, the range would be from 0 to x - 1&lt;/p&gt;
+
+&lt;h2 id=&quot;how-they-came-up-with-this-idea&quot;&gt;How they came up with this idea?&lt;/h2&gt;
+
+&lt;p&gt;So, in this case, every byte has a unique address. This mean if we get the address, we can  manipulate the data directly.&lt;/p&gt;
+
+&lt;p&gt;This idea is actually present in the CPU registers. if you take a look at the registers, there’s something called EIP (Extended instruction pointer) in 32-bit system or RIP (Register instruction pointer) in 64-bit system.These works exactly like pointers they take the address of current instruction and process in the CPU. So, you could think of RIP as a pointer.&lt;/p&gt;
+
+&lt;center&gt;
+
+&lt;img src=&quot;https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/Pointer_1.png&quot; width=&quot;600&quot; height=&quot;300&quot; alt=&quot;Pointer in C Programming&quot; /&gt;
+
+&lt;/center&gt;
+
+&lt;p&gt;This is where the pointer is capable of storing the memory address of the another variable or object.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-to-use-a-pointer-in-c-&quot;&gt;How to use a Pointer in C ?&lt;/h2&gt;
+
+&lt;h2 id=&quot;declaring-a-pointer&quot;&gt;Declaring a pointer&lt;/h2&gt;
+
+&lt;p&gt;To declare a pointer in C, we need to specify the datatype, followed by an asterisk, and then the name of the variable.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-c&quot;&gt;
+datatype *variablename
+
+eg:
+    int *ptr;  // declaring an uninitialized pointer 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;address-of-operator&quot;&gt;Address of operator&lt;/h2&gt;
+
+&lt;p&gt;Next, we need to point to an object Here, the object refers to a region of memory or the address of another variable.
+To get the address of another variable we need use the &amp;amp; operator.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-c&quot;&gt;#include &amp;lt;stdio.h&amp;gt;
+int main(void)
+{
+    int a = 12;
+    int *ptr = &amp;amp;a; // Getting the address of the another variable or object
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Note&lt;/strong&gt;
+  An integer pointer can only points to an integer, not a float,char etc. if it points to a different size of integer, it could lead to loss of value. To avoid this, you need to use type casting or pointer type casting eg: (int *)
+  int *ptr; // points to an integer object
+  float *ptr; // points to a float object
+  char *ptr; // points to a char object&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;indirectiondereference-operator&quot;&gt;Indirection/dereference operator&lt;/h2&gt;
+
+&lt;p&gt;Indirection or dereferencing goes to the address and fetches the value.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-c&quot;&gt;#include &amp;lt;stdio.h&amp;gt;
+int main(void)
+{
+    int a = 12;
+    int *ptr = &amp;amp;a;
+    printf(&quot;the value ptr %d\n&quot;,*ptr); // dereferencing the value // print 12 
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;center&gt;
+
+&lt;img src=&quot;https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/pointer_2.png&quot; alt=&quot;Pointer in c&quot; /&gt;
+
+&lt;/center&gt;
+
+&lt;p&gt;&lt;strong&gt;Note: Don’t confuse with reference and dereference, as both may look similar at times.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;By using the dereference operator, we can also reassign the value.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-c&quot;&gt;#include &amp;lt;stdio.h&amp;gt;
+int main(void)
+{
+    int a = 12;
+    int *ptr = &amp;amp;a; // assign the value to the pointer 
+    *ptr = 32; // dereference and assign the value 
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now both &lt;code&gt;a&lt;/code&gt; and &lt;code&gt;ptr&lt;/code&gt; has the same value. So, if change for one, it will affect the other because you are directly manipulating the memory and here the a points to the ptr.&lt;/p&gt;
+&lt;center&gt;
+
+&lt;img src=&quot;https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/Pointer_3.png&quot; alt=&quot;Pointer in C&quot; /&gt;
+
+&lt;/center&gt;
+
+&lt;h2 id=&quot;pointer-assignment&quot;&gt;Pointer Assignment&lt;/h2&gt;
+&lt;p&gt;C allows us to assign one pointer to another pointer which copies the value(address) stored in the original pointer.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-c&quot;&gt;#include &amp;lt;stdio.h&amp;gt;
+int main(void)
+{
+    int i = 12;
+    int *ptr;
+    int *htr;
+
+    ptr = &amp;amp;i;
+    htr = ptr;
+
+    printf(&quot;The address of ptr %p\n&quot;,ptr);
+    printf(&quot;The address of htr %p\n&quot;,htr);
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In this code, if you take a look, both &lt;code&gt;ptr&lt;/code&gt; and &lt;code&gt;htr&lt;/code&gt; have same address that of &lt;code&gt;i&lt;/code&gt; which they point to.&lt;/p&gt;
+
+&lt;center&gt;
+
+&lt;img src=&quot;https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/Pointer_4.png&quot; alt=&quot;Pointer in C&quot; /&gt;
+
+&lt;/center&gt;
+
+&lt;p&gt;Now both point to same address if change any one of the value it affect 2 object i,ptr.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-c&quot;&gt;#include &amp;lt;stdio.h&amp;gt;
+int main(void)
+{
+    int i = 12;
+    int *ptr;
+    int *htr;
+
+    ptr = &amp;amp;i;
+    *htr = 100;
+
+    printf(&quot;The value of i %d\n&quot;,i);
+    printf(&quot;The value of ptr %d\n&quot;,*ptr);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;center&gt;
+
+&lt;img src=&quot;https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/Pointer_5.png&quot; alt=&quot;Pointer in C&quot; /&gt;
+
+&lt;/center&gt;
+
+&lt;h2 id=&quot;why-do-we-use-a-pointer&quot;&gt;Why do we use a pointer?&lt;/h2&gt;
+&lt;p&gt;So far, we’ve seen how to use a pointer. now we’re going to see why we use a pointer and where to use the pointer.&lt;/p&gt;
+
+&lt;h3 id=&quot;passing-a-pointer-as-an-argument&quot;&gt;Passing a pointer as an argument&lt;/h3&gt;
+&lt;p&gt;In general, if you take a look at a function parameter, it usually takes the value as a deep copy or just makes a copy of the value and stores it in a local variable,like &lt;code&gt;a&lt;/code&gt; in this case Because it protects the value from been changed.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-c&quot;&gt;#include &amp;lt;stdio.h&amp;gt;
+
+void modify(int a)
+{
+    a = 32;
+}
+
+int main(void)
+{
+    int a = 12;
+    modify(a);
+    printf(&quot;the value of a: %d\n&quot;,a);
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In the above code, will the value of a change if we print it after the function call?&lt;/p&gt;
+
+&lt;p&gt;Simply, no.&lt;/p&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;center&gt;
+
+&lt;img src=&quot;https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/Pointer_6.png&quot; alt=&quot;Pointer in C&quot; /&gt;
+
+&lt;/center&gt;
+
+&lt;p&gt;But if we use a pointer, it directly manipulates the memory,allowing us to change the value without needing to return it.The modified value is stored in the same variable.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-c&quot;&gt;#include &amp;lt;stdio.h&amp;gt;
+
+void modify(int *a) // accepting the parameter as pointer
+{
+    *a = 32; // dereferencing the variable 
+}
+
+int main(void)
+{
+    int a = 12;
+    modify(&amp;amp;a); // passing the address 
+    printf(&quot;the value of a: %d\n&quot;,a);
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Don’t confuse with referencing and dereferencing both look same in this case.&lt;/p&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;center&gt;
+
+&lt;img src=&quot;https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/Pointer_7.png&quot; alt=&quot;Pointer in C&quot; /&gt;
+
+&lt;/center&gt;
+
+&lt;h2 id=&quot;pointer-for-problem-solving-math-problem&quot;&gt;Pointer for Problem-solving (Math Problem)&lt;/h2&gt;
+
+&lt;p&gt;Let’s use pointer for problem solving, specifically math problem.&lt;/p&gt;
+
+&lt;p&gt;We are given an array, and your task is to find the maximum and minimum values using a void function.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-c&quot;&gt;Enter a 10 number: 82 42 102 94 23 11 50 31 49 10
+Largest: 102
+Smallest: 10
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-c&quot;&gt;#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;limits.h&amp;gt;
+#define MAX 10
+
+void findMaxandMin(int arr[], int n,int *max, int *min)
+{
+
+    *max = INT_MIN;
+    *min = INT_MAX;
+    for(int i = 0; i &amp;lt; MAX; i++)
+    {
+        if(arr[i] &amp;gt; *max)
+        {
+            *max = arr[i];
+        }
+        else
+        {
+            *min = arr[i];
+        }
+    }
+
+}
+
+int main(void)
+{
+    int largest,smallest;
+    int arr[MAX];
+    printf(&quot;Enter %d numbers: &quot;,MAX);
+    for(int i = 0; i &amp;lt; MAX; i++)
+    {
+        scanf(&quot;%d&quot;,&amp;amp;arr[i]);   
+    }
+    findMaxandMin(arr,MAX,&amp;amp;largest,&amp;amp;smallest);
+    printf(&quot;Largest %d\n&quot;,largest);
+    printf(&quot;Smallest %d\n&quot;,smallest);
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;center&gt;
+
+&lt;img src=&quot;https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/Pointer_8.png&quot; alt=&quot;Pointer in C&quot; /&gt;
+
+&lt;/center&gt;
+
+&lt;p&gt;So yeah, that’s the power of pointers in C! 
+And this is just the basics we only scratched the surface. There lot more cool stuff coming up with the next blog, like &lt;code&gt;array vs pointer&lt;/code&gt; etc…&lt;/p&gt;
+
+&lt;p&gt;If you liked this post, feel free to subscribe to my blog for more content like this and if found it would be helpful, consider donating to support my work. Every bit helps and keeps me motivated&lt;/p&gt;
+
+&lt;p&gt;Just Buy me some coffee ☕!&lt;/p&gt;
+
+&lt;center&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js&quot; data-name=&quot;bmc-button&quot; data-slug=&quot;tamilcode&quot; data-color=&quot;#5F7FFF&quot; data-emoji=&quot;☕&quot; data-font=&quot;Lato&quot; data-text=&quot;Buy me a coffee&quot; data-outline-color=&quot;#000000&quot; data-font-color=&quot;#ffffff&quot; data-coffee-color=&quot;#FFDD00&quot;&gt;&lt;/script&gt;
+&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Thanks for reading and happy coding…………………………💻&lt;/p&gt;
+</description>
+        <pubDate>Thu, 10 Jul 2025 08:30:00 +0530</pubDate>
+        <link>http://localhost:4000/0xevilox-blog/deep-dive-into-pointer/</link>
+        <guid isPermaLink="true">http://localhost:4000/0xevilox-blog/deep-dive-into-pointer/</guid>
+        
+        <category>Pointer</category>
+        
+        
+        <category>Pointer</category>
+        
+        <category>C</category>
+        
+      </item>
+    
+  </channel>
+</rss>
