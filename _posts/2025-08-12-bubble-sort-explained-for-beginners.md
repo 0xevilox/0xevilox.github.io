@@ -147,7 +147,7 @@ You may be **wondering what j and j + 1 are**. Basically, j represents the curre
 Now you can clearly see that the **largest element moves towards the end**, just like a **bubble rising to the surface** (when you boil the water). 
 That's why it's called **bubble sort.**
 
-Next, we move to the second iteration, **i = 1 **
+Next, we move to the second iteration, **i = 1**
 
 In the second iteration, we take the list {5,4,3,2,1,6}, which is the result after the first iteration. 
 
