@@ -50,7 +50,7 @@ int main(void)
 The above function doesn't compute the value. just print the birthday message.
 In C++, a function is a series of the statement that is grouped together and given name to the function.
 
-<img src="./_postImage/function-in-cpp-void-0xevilox.png" alt="C++ example showing a simple function called printhappybirthday that prints a message without returning a value."/>
+<img src="https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/function-in-cpp-void-0xevilox.png" alt="C++ example showing a simple function called printhappybirthday that prints a message without returning a value."/>
 
 ## Why use functions in C++?
 
@@ -131,7 +131,7 @@ int main(void)
 }
 
 ```
-<img src="./_postImage/function-cpp-oxevilox-1.png" alt="C++ code showing a function named add that takes two integers, adds them, and returns the result."/>
+<img src="https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/function-cpp-oxevilox-1.png" alt="C++ code showing a function named add that takes two integers, adds them, and returns the result."/>
 
 In the above example:
 - return type: int 
@@ -303,7 +303,7 @@ int add(int a, int b)
 }
 ```
 
-<img src="./_postImage/function-cpp-0exvilox-3.png" alt="C++ program demonstrating implicit type conversion where float values are passed to a function expecting int parameters"/>
+<img src="https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/function-cpp-0exvilox-3.png" alt="C++ program demonstrating implicit type conversion where float values are passed to a function expecting int parameters"/>
 
 2.**Default arguments promotion:** When you passing the small datatype values it get automatically convert:
 * `float is promoted to double `
@@ -353,7 +353,7 @@ float add(float a, float b)
 ### Use Case: Area Calculation Using Function Overloading
 Find the **area of the rectange and square**
 
-<img src="./_postImage/square-rectange-cpp-0xevilox.png" alt="Rectange and square image for the algorithm C++"/>
+<img src="https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/square-rectange-cpp-0xevilox.png" alt="Rectange and square image for the algorithm C++"/>
 
 Since these concepts are already covered in school, I won't explain them in detail here.
 
@@ -384,7 +384,7 @@ int main(void)
 }
 
 ```
-<img src="./_postImage/function-cpp-0xevilox-4.png" alt="Rectange and square image for the algorithm C++"/>
+<img src="https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/function-cpp-0xevilox-4.png" alt="Rectange and square image for the algorithm C++"/>
 
 ## Final Thoughts on C++ Functions:
 So, I hope you understand how function in C++ Works and we explored what functions are, how to write them, type of functions, function overloading and solving the problem using the functions in C++
