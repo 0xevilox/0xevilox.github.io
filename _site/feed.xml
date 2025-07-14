@@ -5,8 +5,8 @@
     <description>This blog covers programming, problem solving, DSA, and low-level system design. Explore tutorials, tips, and insights to enhance your coding skills and tackle complex challenges.</description>
     <link>http://localhost:4000/0xevilox-blog/</link>
     <atom:link href="http://localhost:4000/0xevilox-blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 14 Jul 2025 19:46:10 +0530</pubDate>
-    <lastBuildDate>Mon, 14 Jul 2025 19:46:10 +0530</lastBuildDate>
+    <pubDate>Mon, 14 Jul 2025 19:54:30 +0530</pubDate>
+    <lastBuildDate>Mon, 14 Jul 2025 19:54:30 +0530</lastBuildDate>
     <generator>Jekyll v4.4.1</generator>
     
       <item>
@@ -517,44 +517,54 @@ Support the content by buying a coffee ☕&lt;/p&gt;
   &lt;li&gt;How it works step by step&lt;/li&gt;
   &lt;li&gt;How to optimize the code&lt;/li&gt;
   &lt;li&gt;Why do we do that?&lt;/li&gt;
-  &lt;li&gt;How to understand it mathematically.&lt;/li&gt;
+  &lt;li&gt;How to understand it mathematically&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Before diving into the bubble sort, there’s something important.&lt;/p&gt;
+&lt;p&gt;Before diving into bubble sort, there’s something important.&lt;/p&gt;
 
 &lt;p&gt;We need to understand &lt;strong&gt;computer science&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Computer science&lt;/strong&gt; is the study of information – how it’s represented and how it’s computed.&lt;/p&gt;
 
-&lt;h2 id=&quot;why-are-we-learning-the-bubble-sort-and-all-these-basic-algorithms&quot;&gt;Why are we learning the bubble sort and all these basic algorithms?&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;why-are-we-learning-bubble-sort-and-all-these-basic-algorithms&quot;&gt;Why are we learning bubble sort and all these basic algorithms?&lt;/h2&gt;
 
 &lt;p&gt;Because &lt;strong&gt;bubble sort&lt;/strong&gt; is one of the fundamental algorithms in &lt;strong&gt;computer science&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;h2 id=&quot;so-what-is-an-algorithm&quot;&gt;So, What is an algorithm?&lt;/h2&gt;
+&lt;hr /&gt;
 
-&lt;p&gt;The algorithm is a very, very precise set of instructions designed to solve a computational problem. It takes a set of inputs to produce a set of outputs within a finite amount of time.&lt;/p&gt;
+&lt;h2 id=&quot;so-what-is-an-algorithm&quot;&gt;So, What is an Algorithm?&lt;/h2&gt;
+
+&lt;p&gt;An algorithm is a very precise set of instructions designed to solve a computational problem. It takes a set of inputs to produce a set of outputs within a finite amount of time.&lt;/p&gt;
 
 &lt;p&gt;And algorithms aren’t just for computers. We actually use algorithms in our daily lives, too.&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;h3 id=&quot;daily-life-analogy-of-algorithms&quot;&gt;Daily Life Analogy of Algorithms&lt;/h3&gt;
 
 &lt;p&gt;For example: How do you brush your teeth?&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;You walk to the bathroom&lt;/li&gt;
-  &lt;li&gt;You take the brush and rinse it in the sink&lt;/li&gt;
-  &lt;li&gt;Then you apply the toothpaste and brush your teeth&lt;/li&gt;
+  &lt;li&gt;Walk to the bathroom&lt;/li&gt;
+  &lt;li&gt;Take the brush and rinse it in the sink&lt;/li&gt;
+  &lt;li&gt;Apply the toothpaste and brush your teeth&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;hr /&gt;
 
 &lt;h3 id=&quot;precise-vs-vague-instructions&quot;&gt;Precise vs Vague Instructions&lt;/h3&gt;
 
-&lt;p&gt;But if you notice, these steps are vague. I haven’t given the precise instruction because you use your common sense, but computers don’t.&lt;/p&gt;
+&lt;p&gt;But if you notice, these steps are vague. I haven’t given precise instructions because you use your common sense, but computers don’t.&lt;/p&gt;
 
-&lt;p&gt;Computers are literally dumb. They need precise, not only just precise, but very accurate instructions.&lt;/p&gt;
+&lt;p&gt;Computers are literally dumb. They need not only precise, but very accurate instructions.&lt;/p&gt;
 
-&lt;p&gt;If you don’t give the extract steps, the program crashes.&lt;/p&gt;
+&lt;p&gt;If you don’t give the exact steps, the program crashes.&lt;/p&gt;
 
-&lt;h2 id=&quot;how-does-the-precise-algorithm-look&quot;&gt;How does the precise algorithm look?&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;how-does-a-precise-algorithm-look&quot;&gt;How does a precise algorithm look?&lt;/h2&gt;
 
 &lt;p&gt;For example: How do you teach your computer to brush your teeth?&lt;/p&gt;
 
@@ -568,7 +578,7 @@ Support the content by buying a coffee ☕&lt;/p&gt;
   &lt;li&gt;Brush your teeth:
     &lt;ul&gt;
       &lt;li&gt;Upper teeth 4 times&lt;/li&gt;
-      &lt;li&gt;lower teeth 4 times, etc..&lt;/li&gt;
+      &lt;li&gt;Lower teeth 4 times, etc.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;Rinse your mouth with water&lt;/li&gt;
@@ -577,63 +587,78 @@ Support the content by buying a coffee ☕&lt;/p&gt;
   &lt;li&gt;Done&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;So this &lt;strong&gt;precise algorithm&lt;/strong&gt; looks like&lt;/p&gt;
+&lt;p&gt;So this &lt;strong&gt;precise algorithm&lt;/strong&gt; looks like this.&lt;/p&gt;
 
 &lt;p&gt;But even here, &lt;strong&gt;I’ve left out a few important steps&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;h2 id=&quot;what-if-you-didnt-close-the-bathroom-door&quot;&gt;What if you didn’t close the bathroom door?&lt;/h2&gt;
 
 &lt;p&gt;Someone might walk in and interrupt you – that’s an &lt;strong&gt;unexpected behavior&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;In Programming, we call that a &lt;strong&gt;bug&lt;/strong&gt; – when your program doesn’t handle a certain situation correctly and ends up doing &lt;strong&gt;something wrong or even crashing&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;In programming, we call that a &lt;strong&gt;bug&lt;/strong&gt; – when your program doesn’t handle a certain situation correctly and ends up doing something wrong or even crashing.&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;h2 id=&quot;why-am-i-saying-all-this-to-you&quot;&gt;Why am I saying all this to you?&lt;/h2&gt;
 
 &lt;p&gt;Because you need to think, not just memorize.&lt;/p&gt;
 
-&lt;p&gt;Don’t just blindly cram bubble sort for a random tech interview. Instead, understand what it actually is–how it works, why it matters, and what it teaches you about problem-solving.&lt;/p&gt;
+&lt;p&gt;Don’t just blindly cram bubble sort for a random tech interview. Instead, understand what it actually is—how it works, why it matters, and what it teaches you about problem-solving.&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;h2 id=&quot;what-is-bubble-sort&quot;&gt;What is Bubble Sort?&lt;/h2&gt;
-&lt;p&gt;Bubble Sort is a simple sorting algorithm that compares pairs of adjacent elements and swaps them if they are in the wrong order. This process will be repeated until the array is sorted either in increasing or decreasing order.&lt;/p&gt;
+
+&lt;p&gt;Bubble Sort is a simple sorting algorithm that compares pairs of adjacent elements and swaps them if they are in the wrong order. This process is repeated until the array is sorted either in increasing or decreasing order.&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;h2 id=&quot;bubble-sort-analogy&quot;&gt;Bubble Sort Analogy&lt;/h2&gt;
-&lt;p&gt;Imagine in the school, the students are standing in a prayer line or something like a class photo.
-The teacher wants to arrange the students in order based on height. If someone is shorter, they will go in front. Someone is the tallest they will go back.&lt;/p&gt;
 
-&lt;p&gt;This will be repeated until the shortest student goes forward and the tallest student goes backward.&lt;/p&gt;
+&lt;p&gt;Imagine in school, the students are standing in a prayer line or for a class photo.
+The teacher wants to arrange the students in order based on height. If someone is shorter, they go in front. If someone is the tallest, they go to the back.&lt;/p&gt;
+
+&lt;p&gt;This is repeated until the shortest student goes forward and the tallest student goes backward.&lt;/p&gt;
 
 &lt;p&gt;In each round, the tallest student “bubbles up” to the end like a bubble rising to the surface in water.&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;h2 id=&quot;how-does-it-work&quot;&gt;How does it work?&lt;/h2&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;First, let’s take the unsorted data from the user, for example: {6,4,5,3,2,1};&lt;/li&gt;
-  &lt;li&gt;Next, compare a pair of adjacent elements; if the first is larger than the second element, swap the elements. i.e, if a&lt;sub&gt;j&lt;/sub&gt; &amp;gt; a&lt;sub&gt;j+1&lt;/sub&gt;, then swap a&lt;sub&gt;j&lt;/sub&gt; and a&lt;sub&gt;j+1&lt;/sub&gt;.&lt;/li&gt;
+  &lt;li&gt;Take the unsorted data from the user, for example: &lt;code class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Compare pairs of adjacent elements; if the first is larger than the second, swap them. i.e., if a&lt;sub&gt;j&lt;/sub&gt; &amp;gt; a&lt;sub&gt;j+1&lt;/sub&gt;, then swap a&lt;sub&gt;j&lt;/sub&gt; and a&lt;sub&gt;j+1&lt;/sub&gt;.&lt;/li&gt;
   &lt;li&gt;Repeat until the array is sorted.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;It looks simple, right? Let’s briefly explain how bubble sort works.&lt;/p&gt;
 
-&lt;p&gt;First, let take the unsorted data: {6,4,5,3,2,1}. To sort this list using bubble sort, we need to compare and swap the elements repeatedly until the entire list is in order.&lt;/p&gt;
+&lt;p&gt;First, take the unsorted data: &lt;code class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;. To sort this list using bubble sort, we need to compare and swap the elements repeatedly until the entire list is in order.&lt;/p&gt;
 
-&lt;h2 id=&quot;do-we-need-to-use-the-loop&quot;&gt;Do we need to use the loop?&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;do-we-need-to-use-loops&quot;&gt;Do we need to use loops?&lt;/h2&gt;
 
 &lt;p&gt;In this case, we use two loops: one is the outer loop and the other is the inner loop.&lt;/p&gt;
 
 &lt;p&gt;The outer loop iterates over the elements multiple times, while the inner loop performs the comparisons.&lt;/p&gt;
 
-&lt;h2 id=&quot;why-are-we-using-the-two-loops&quot;&gt;Why are we using the two loops?&lt;/h2&gt;
+&lt;hr /&gt;
 
-&lt;p&gt;Because we need to compare each and every element, if we use a single loop, only one element gets sorted; the others do not get sorted.&lt;/p&gt;
+&lt;h2 id=&quot;why-are-we-using-two-loops&quot;&gt;Why are we using two loops?&lt;/h2&gt;
 
-&lt;p&gt;Let’s start with iteration. In the first iteration, where i = 0 and i &amp;lt; n, we start comparing elements from the beginning.&lt;/p&gt;
+&lt;p&gt;Because we need to compare each and every element. If we use a single loop, only one element gets sorted; the others do not.&lt;/p&gt;
+
+&lt;p&gt;Let’s start with iteration. In the first iteration, where &lt;code class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;/code&gt; and &lt;code class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;/code&gt;, we start comparing elements from the beginning.&lt;/p&gt;
+
 &lt;center&gt;
-
 &lt;img src=&quot;https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/first_iteration.png&quot; alt=&quot;First iteration of the Bubble Sort algorithm visualized by 0xevilox, showing initial element comparisons and swaps.&quot; /&gt;
-
 &lt;/center&gt;
 
-&lt;p&gt;Let’s go through the first pass of the bubble sort step by step using the list:&lt;/p&gt;
+&lt;p&gt;Let’s go through the first pass of bubble sort step by step using the list:&lt;/p&gt;
 
 &lt;p&gt;We start with &lt;strong&gt;i = 0 (first iteration)&lt;/strong&gt;, and we’ll compare each pair of neighboring elements using an inner loop.&lt;/p&gt;
 
@@ -667,35 +692,35 @@ The teacher wants to arrange the students in order based on height. If someone i
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Now you can clearly see that the &lt;strong&gt;largest element moves towards the end&lt;/strong&gt;, just like a &lt;strong&gt;bubble rising to the surface&lt;/strong&gt; (when you boil the water). 
-That’s why it’s called &lt;strong&gt;bubble sort.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Now you can clearly see that the &lt;strong&gt;largest element moves towards the end&lt;/strong&gt;, just like a &lt;strong&gt;bubble rising to the surface&lt;/strong&gt; (when you boil water).
+That’s why it’s called &lt;strong&gt;bubble sort&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;Next, we move to the second iteration, &lt;strong&gt;i = 1&lt;/strong&gt;&lt;/p&gt;
+&lt;hr /&gt;
 
-&lt;p&gt;In the second iteration, we take the list {5,4,3,2,1,6}, which is the result after the first iteration.&lt;/p&gt;
+&lt;p&gt;Next, we move to the second iteration, &lt;strong&gt;i = 1&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;In the second iteration, we take the list &lt;code class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;, which is the result after the first iteration.&lt;/p&gt;
 
 &lt;center&gt;
-
 &lt;img src=&quot;https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/second_iteration.png&quot; alt=&quot;Second iteration of the Bubble Sort algorithm by 0xevilox, highlighting progress as larger elements bubble toward the end.&quot; /&gt;
-
 &lt;/center&gt;
 
-&lt;p&gt;Here, you can clearly see that the last number will largest. So, in every iteration, the biggest number goes to the last.&lt;/p&gt;
+&lt;p&gt;Here, you can clearly see that the last number is the largest. So, in every iteration, the biggest number goes to the last.&lt;/p&gt;
 
 &lt;p&gt;Let’s start the second iteration.&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;Compare 5 and 4.
+  &lt;li&gt;Compare 5 and 4
     &lt;ul&gt;
       &lt;li&gt;Since 5 is greater than 4, swap the elements.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;Compare 5 and 3.
+  &lt;li&gt;Compare 5 and 3
     &lt;ul&gt;
       &lt;li&gt;Since 5 is greater than 3, swap the elements.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;Compare 5 and 2.
+  &lt;li&gt;Compare 5 and 2
     &lt;ul&gt;
       &lt;li&gt;Since 5 is greater than 2, swap the elements.&lt;/li&gt;
     &lt;/ul&gt;
@@ -707,34 +732,35 @@ That’s why it’s called &lt;strong&gt;bubble sort.&lt;/strong&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;In this case, we don’t compare the 5 and 6 because 6 is already in its correct (sorted) position.&lt;/p&gt;
+&lt;p&gt;In this case, we don’t compare 5 and 6 because 6 is already in its correct (sorted) position.&lt;/p&gt;
 
-&lt;p&gt;To avoid comparing with elements that are already sorted at the end of the list, we use the condition j &amp;lt; n-i-1 in the inner loop.&lt;/p&gt;
+&lt;p&gt;To avoid comparing with elements that are already sorted at the end of the list, we use the condition &lt;code class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;/code&gt; in the inner loop.&lt;/p&gt;
 
-&lt;p&gt;This condition ensures that with each iteration of the outer loop (i), we reduce the number of comparisons, since the largest elements have already “bubbled up to the end.&lt;/p&gt;
+&lt;p&gt;This condition ensures that with each iteration of the outer loop (&lt;code class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;/code&gt;), we reduce the number of comparisons, since the largest elements have already “bubbled up” to the end.&lt;/p&gt;
 
 &lt;p&gt;For example:&lt;/p&gt;
-
 &lt;ul&gt;
-  &lt;li&gt;In the first iteration, i = 0 so the condition becomes j &amp;lt;  n - 0 - 1 -&amp;gt; j &amp;lt; n - 1.&lt;/li&gt;
-  &lt;li&gt;In the second iteration, i = 1, so the condition becomes j &amp;lt; n - 1 - 1 -&amp;gt; j &amp;lt; n - 2.&lt;/li&gt;
+  &lt;li&gt;In the first iteration, &lt;code class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;/code&gt; so the condition becomes &lt;code class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;In the second iteration, &lt;code class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;/code&gt;, so the condition becomes &lt;code class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;/code&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;In a nutshell, this &lt;strong&gt;condition helps to avoid unnecessary comparison&lt;/strong&gt; within the elements that are already sorted at the end of the list. With each pass, the biggest number settles in place, so the inner loop doesn’t need to check those again.&lt;/p&gt;
+&lt;p&gt;In a nutshell, this &lt;strong&gt;condition helps to avoid unnecessary comparisons&lt;/strong&gt; with elements that are already sorted at the end of the list. With each pass, the biggest number settles in place, so the inner loop doesn’t need to check those again.&lt;/p&gt;
 
-&lt;p&gt;For example: {5,4,3,2,1,6}, where n = 6;&lt;/p&gt;
+&lt;p&gt;For example: &lt;code class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;, where &lt;code class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;/code&gt;;&lt;/p&gt;
 
-&lt;p&gt;So n-2 = 4, meaning the inner loop only checks up to the 4 index and doesn’t compare with the already sorted 6 at the end.&lt;/p&gt;
+&lt;p&gt;So &lt;code class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;/code&gt;, meaning the inner loop only checks up to index 4 and doesn’t compare with the already sorted 6 at the end.&lt;/p&gt;
 
 &lt;p&gt;This is a simple form of &lt;strong&gt;optimization in bubble sort&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;In the third iteration, we take the list {4,3,2,1,5,6}, which is the result after the second iteration.&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;In the third iteration, we take the list &lt;code class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;, which is the result after the second iteration.&lt;/p&gt;
+
 &lt;center&gt;
-
 &lt;img src=&quot;https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/third_iteration.png&quot; alt=&quot;Third iteration of the Bubble Sort algorithm by 0xevilox, illustrating fewer swaps as elements near their sorted positions.&quot; /&gt;
-
 &lt;/center&gt;
-&lt;p&gt;Next, in the third iteration.&lt;/p&gt;
+
+&lt;p&gt;Next, in the third iteration:&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;Compare 4 and 3
@@ -742,25 +768,27 @@ That’s why it’s called &lt;strong&gt;bubble sort.&lt;/strong&gt;&lt;/p&gt;
       &lt;li&gt;Since 4 is greater than 3, swap the elements.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;Compare 4 and 2.
+  &lt;li&gt;Compare 4 and 2
     &lt;ul&gt;
       &lt;li&gt;Since 4 is greater than 2, swap the elements.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;Compare 4 and 1.
+  &lt;li&gt;Compare 4 and 1
     &lt;ul&gt;
       &lt;li&gt;Since 4 is greater than 1, swap the elements.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;In the fourth iteration, we take the list {3,2,1,4,5,6}, which is the result after the third iteration.&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;In the fourth iteration, we take the list &lt;code class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;, which is the result after the third iteration.&lt;/p&gt;
+
 &lt;center&gt;
-
 &lt;img src=&quot;https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/fourth_iteration.png&quot; alt=&quot;Fourth iteration of the Bubble Sort algorithm by 0xevilox, showing minimal comparisons as the list approaches a sorted state.&quot; /&gt;
-
 &lt;/center&gt;
-&lt;p&gt;Next, we compare the elements again in the fourth iteration&lt;/p&gt;
+
+&lt;p&gt;Next, we compare the elements again in the fourth iteration:&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;Compare 3 and 2
@@ -775,15 +803,15 @@ That’s why it’s called &lt;strong&gt;bubble sort.&lt;/strong&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;In the fifth iteration, we take the list {2,1,3,4,5,6}, which is the result after the fourth iteration.&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;In the fifth iteration, we take the list &lt;code class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;, which is the result after the fourth iteration.&lt;/p&gt;
 
 &lt;center&gt;
-
 &lt;img src=&quot;https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/fifith_iteration.png&quot; alt=&quot;Fifth and final iteration of the Bubble Sort algorithm by 0xevilox, where the array is fully sorted with no further swaps needed.&quot; /&gt;
-
 &lt;/center&gt;
 
-&lt;p&gt;In the fifth iteration.&lt;/p&gt;
+&lt;p&gt;In the fifth iteration:&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;Compare 2 and 1
@@ -797,14 +825,17 @@ That’s why it’s called &lt;strong&gt;bubble sort.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;After there is no swap, the loop gets terminated, and you get the sorted array or list.&lt;/p&gt;
 
-&lt;h2 id=&quot;final-thoughts&quot;&gt;Final Thoughts:&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;final-thoughts&quot;&gt;Final Thoughts&lt;/h2&gt;
+
 &lt;p&gt;So that’s how bubble sort works. I hope you now understand this algorithm better. In the next post, we’ll see how to implement it, analyze its performance, and explore ways to optimize the code.&lt;/p&gt;
 
-&lt;p&gt;I also hope this post didn’t just explain what bubble sort is, but also gave you a clearer idea of what an algorithm is and how to think about problem-solving. Remember, a learning algorithm isn’t about memorizing steps or rushing to pass an interview.&lt;/p&gt;
+&lt;p&gt;I also hope this post didn’t just explain what bubble sort is, but also gave you a clearer idea of what an algorithm is and how to think about problem-solving. Remember, learning algorithms isn’t about memorizing steps or rushing to pass an interview.&lt;/p&gt;
 
 &lt;p&gt;It’s about building your problem-solving mindset and understanding how computers really work.&lt;/p&gt;
 
-&lt;p&gt;“Enjoyed this guide? You can support me on Buy Me a Coffee — it helps me keep writing practical tutorials like this.&lt;/p&gt;
+&lt;p&gt;Enjoyed this guide? You can support me on Buy Me a Coffee — it helps me keep writing practical tutorials like this.&lt;/p&gt;
 
 &lt;center&gt;
 &lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js&quot; data-name=&quot;bmc-button&quot; data-slug=&quot;tamilcode&quot; data-color=&quot;#5F7FFF&quot; data-emoji=&quot;☕&quot; data-font=&quot;Lato&quot; data-text=&quot;Buy me a coffee&quot; data-outline-color=&quot;#000000&quot; data-font-color=&quot;#ffffff&quot; data-coffee-color=&quot;#FFDD00&quot;&gt;&lt;/script&gt;
@@ -822,94 +853,104 @@ That’s why it’s called &lt;strong&gt;bubble sort.&lt;/strong&gt;&lt;/p&gt;
         
         <category>Problem Solving</category>
         
-        <category>Alogrithm</category>
+        <category>Algorithm</category>
         
       </item>
     
       <item>
-        <title>Deep Dive into Pointers Unleashing the Power of C</title>
+        <title>Deep Dive into Pointers: Unleashing the Power of C</title>
         <description>&lt;h1 id=&quot;deep-dive-into-pointers-unleashing-the-power-of-c&quot;&gt;Deep Dive into Pointers: Unleashing the Power of C&lt;/h1&gt;
 
 &lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
 
 &lt;p&gt;Hey Guys, Welcome to this blog!&lt;/p&gt;
 
-&lt;p&gt;In this blog we’re going to learn about the &lt;strong&gt;basics of a pointer&lt;/strong&gt; and how to &lt;strong&gt;use a pointer in C&lt;/strong&gt;. We’ll also look at the history behind pointers, why we use them, and some &lt;strong&gt;common pitfalls&lt;/strong&gt; to avoid.&lt;/p&gt;
+&lt;p&gt;In this blog, we’re going to learn about the &lt;strong&gt;basics of a pointer&lt;/strong&gt; and how to &lt;strong&gt;use a pointer in C&lt;/strong&gt;. We’ll also look at the history behind pointers, why we use them, and some &lt;strong&gt;common pitfalls&lt;/strong&gt; to avoid.&lt;/p&gt;
 
 &lt;p&gt;So let’s dive deep into the world of pointers!&lt;/p&gt;
 
-&lt;h2 id=&quot;what-is-pointer&quot;&gt;What is Pointer?&lt;/h2&gt;
+&lt;hr /&gt;
 
-&lt;p&gt;Pointer is nothing but a variable that stores the memory address of another variable or object Woooo! What does that mean?
-Before diving into the pointer, we need to understand some basics about how memory works and represented in under the hood.&lt;/p&gt;
+&lt;h2 id=&quot;what-is-a-pointer&quot;&gt;What is a Pointer?&lt;/h2&gt;
 
-&lt;p&gt;Before moving on to that, what is Computer Science?
-Computer Science is all about the study information,computation, and how information is represented, right?
-Information represented in the memory as the binary form&lt;/p&gt;
+&lt;p&gt;A pointer is a variable that stores the memory address of another variable or object.&lt;br /&gt;
+Woooo! What does that mean?&lt;/p&gt;
 
-&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;eg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+&lt;p&gt;Before diving into pointers, we need to understand some basics about how memory works and is represented under the hood.&lt;/p&gt;
+
+&lt;p&gt;Before moving on to that, what is Computer Science?&lt;br /&gt;
+Computer Science is all about the study of information, computation, and how information is represented, right?&lt;br /&gt;
+Information is represented in memory as binary.&lt;/p&gt;
+
+&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// For example:&lt;/span&gt;
 &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;How would this been respresented in the memory?&lt;/p&gt;
+&lt;p&gt;How would this be represented in memory?&lt;/p&gt;
 
 &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;mo&quot;&gt;000001010&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Because computers understand only 0s and 1s, everything you see on the computer screen is just information represented in the binary form in memory.
-In modern computers, memory(RAM) is divided into the bytes, which are capable of the storing eight bits of information. Each bytes has the unique address.&lt;/p&gt;
+&lt;p&gt;Because computers understand only 0s and 1s, everything you see on the computer screen is just information represented in binary form in memory.&lt;/p&gt;
 
-&lt;p&gt;For example, if there are x numbers of memory in the computer, the range would be from 0 to x - 1&lt;/p&gt;
+&lt;p&gt;In modern computers, memory (RAM) is divided into bytes, which are capable of storing eight bits of information. Each byte has a unique address.&lt;/p&gt;
 
-&lt;h2 id=&quot;how-they-came-up-with-this-idea&quot;&gt;How they came up with this idea?&lt;/h2&gt;
+&lt;p&gt;For example, if there are x bytes of memory in the computer, the range would be from 0 to x - 1.&lt;/p&gt;
 
-&lt;p&gt;So, in this case, every byte has a unique address. This mean if we get the address, we can  manipulate the data directly.&lt;/p&gt;
+&lt;hr /&gt;
 
-&lt;p&gt;This idea is actually present in the CPU registers. if you take a look at the registers, there’s something called EIP (Extended instruction pointer) in 32-bit system or RIP (Register instruction pointer) in 64-bit system.These works exactly like pointers they take the address of current instruction and process in the CPU. So, you could think of RIP as a pointer.&lt;/p&gt;
+&lt;h2 id=&quot;how-did-they-come-up-with-this-idea&quot;&gt;How did they come up with this idea?&lt;/h2&gt;
+
+&lt;p&gt;So, in this case, every byte has a unique address. This means if we get the address, we can manipulate the data directly.&lt;/p&gt;
+
+&lt;p&gt;This idea is actually present in the CPU registers. If you take a look at the registers, there’s something called EIP (Extended Instruction Pointer) in 32-bit systems or RIP (Register Instruction Pointer) in 64-bit systems. These work exactly like pointers: they take the address of the current instruction and process it in the CPU. So, you could think of RIP as a pointer.&lt;/p&gt;
 
 &lt;center&gt;
-
 &lt;img src=&quot;https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/Pointer_1.png&quot; width=&quot;600&quot; height=&quot;300&quot; alt=&quot;Pointer in C Programming&quot; /&gt;
-
 &lt;/center&gt;
 
-&lt;p&gt;This is where the pointer is capable of storing the memory address of the another variable or object.&lt;/p&gt;
+&lt;p&gt;This is where the pointer is capable of storing the memory address of another variable or object.&lt;/p&gt;
 
-&lt;h2 id=&quot;how-to-use-a-pointer-in-c-&quot;&gt;How to use a Pointer in C ?&lt;/h2&gt;
+&lt;hr /&gt;
 
-&lt;h2 id=&quot;declaring-a-pointer&quot;&gt;Declaring a pointer&lt;/h2&gt;
+&lt;h2 id=&quot;how-to-use-a-pointer-in-c&quot;&gt;How to use a Pointer in C?&lt;/h2&gt;
 
-&lt;p&gt;To declare a pointer in C, we need to specify the datatype, followed by an asterisk, and then the name of the variable.&lt;/p&gt;
+&lt;h3 id=&quot;declaring-a-pointer&quot;&gt;Declaring a Pointer&lt;/h3&gt;
 
-&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;n&quot;&gt;datatype&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;variablename&lt;/span&gt;
+&lt;p&gt;To declare a pointer in C, specify the datatype, followed by an asterisk, and then the name of the variable.&lt;/p&gt;
 
-&lt;span class=&quot;n&quot;&gt;eg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ptr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// declaring an uninitialized pointer &lt;/span&gt;
+&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;datatype&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;variablename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Example:&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ptr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// declaring an uninitialized pointer &lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h2 id=&quot;address-of-operator&quot;&gt;Address of operator&lt;/h2&gt;
+&lt;hr /&gt;
 
-&lt;p&gt;Next, we need to point to an object Here, the object refers to a region of memory or the address of another variable.
-To get the address of another variable we need use the &amp;amp; operator.&lt;/p&gt;
+&lt;h3 id=&quot;address-of-operator&quot;&gt;Address-of Operator&lt;/h3&gt;
+
+&lt;p&gt;Next, we need to point to an object. Here, the object refers to a region of memory or the address of another variable.&lt;br /&gt;
+To get the address of another variable, use the &lt;code class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;/code&gt; operator.&lt;/p&gt;
 
 &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include&lt;/span&gt; &lt;span class=&quot;cpf&quot;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;
 &lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ptr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Getting the address of the another variable or object&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ptr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Getting the address of another variable or object&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Note&lt;/strong&gt;
-  An integer pointer can only points to an integer, not a float,char etc. if it points to a different size of integer, it could lead to loss of value. To avoid this, you need to use type casting or pointer type casting eg: (int *)
-  int *ptr; // points to an integer object
-  float *ptr; // points to a float object
-  char *ptr; // points to a char object&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;br /&gt;
+An integer pointer can only point to an integer, not a float or char. If it points to a different size of integer, it could lead to loss of value. To avoid this, use type casting or pointer type casting, e.g., &lt;code class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h2 id=&quot;indirectiondereference-operator&quot;&gt;Indirection/dereference operator&lt;/h2&gt;
+&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ptr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;// points to an integer object&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ptr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// points to a float object&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ptr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// points to a char object&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;indirectiondereference-operator&quot;&gt;Indirection/Dereference Operator&lt;/h3&gt;
 
 &lt;p&gt;Indirection or dereferencing goes to the address and fetches the value.&lt;/p&gt;
 
@@ -918,38 +959,40 @@ To get the address of another variable we need use the &amp;amp; operator.&lt;/p
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ptr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;the value ptr %d&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ptr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// dereferencing the value // print 12 &lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;the value ptr %d&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ptr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// dereferencing the value, prints 12 &lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Output:&lt;/p&gt;
 
 &lt;center&gt;
-
-&lt;img src=&quot;https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/pointer_2.png&quot; alt=&quot;Pointer in c&quot; /&gt;
-
+&lt;img src=&quot;https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/pointer_2.png&quot; alt=&quot;Pointer in C&quot; /&gt;
 &lt;/center&gt;
 
-&lt;p&gt;&lt;strong&gt;Note: Don’t confuse with reference and dereference, as both may look similar at times.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Don’t confuse reference and dereference, as both may look similar at times.&lt;/p&gt;
 
 &lt;p&gt;By using the dereference operator, we can also reassign the value.&lt;/p&gt;
+
 &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include&lt;/span&gt; &lt;span class=&quot;cpf&quot;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;
 &lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ptr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// assign the value to the pointer &lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ptr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// dereference and assign the value &lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ptr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;// dereference and assign the value &lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Now both &lt;code class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;/code&gt; and &lt;code class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;ptr&lt;/span&gt;&lt;/code&gt; has the same value. So, if change for one, it will affect the other because you are directly manipulating the memory and here the a points to the ptr.&lt;/p&gt;
+
+&lt;p&gt;Now both &lt;code class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;/code&gt; and &lt;code class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;ptr&lt;/span&gt;&lt;/code&gt; have the same value. If you change one, it will affect the other because you are directly manipulating the memory and &lt;code class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;/code&gt; points to &lt;code class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;ptr&lt;/span&gt;&lt;/code&gt;.&lt;/p&gt;
+
 &lt;center&gt;
-
 &lt;img src=&quot;https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/Pointer_3.png&quot; alt=&quot;Pointer in C&quot; /&gt;
-
 &lt;/center&gt;
 
+&lt;hr /&gt;
+
 &lt;h2 id=&quot;pointer-assignment&quot;&gt;Pointer Assignment&lt;/h2&gt;
-&lt;p&gt;C allows us to assign one pointer to another pointer which copies the value(address) stored in the original pointer.&lt;/p&gt;
+
+&lt;p&gt;C allows us to assign one pointer to another pointer, which copies the value (address) stored in the original pointer.&lt;/p&gt;
 
 &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include&lt;/span&gt; &lt;span class=&quot;cpf&quot;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;
 &lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
@@ -961,20 +1004,18 @@ To get the address of another variable we need use the &amp;amp; operator.&lt;/p
     &lt;span class=&quot;n&quot;&gt;ptr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;htr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ptr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;The address of ptr %p&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ptr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;The address of htr %p&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;htr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
+    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;The address of ptr %p&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ptr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;The address of htr %p&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;htr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;In this code, if you take a look, both &lt;code class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;ptr&lt;/span&gt;&lt;/code&gt; and &lt;code class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;htr&lt;/span&gt;&lt;/code&gt; have same address that of &lt;code class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;/code&gt; which they point to.&lt;/p&gt;
+
+&lt;p&gt;In this code, both &lt;code class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;ptr&lt;/span&gt;&lt;/code&gt; and &lt;code class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;htr&lt;/span&gt;&lt;/code&gt; have the same address as &lt;code class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;/code&gt;, which they point to.&lt;/p&gt;
 
 &lt;center&gt;
-
 &lt;img src=&quot;https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/Pointer_4.png&quot; alt=&quot;Pointer in C&quot; /&gt;
-
 &lt;/center&gt;
 
-&lt;p&gt;Now both point to same address if change any one of the value it affect 2 object i,ptr.&lt;/p&gt;
+&lt;p&gt;Now both point to the same address. If you change the value using either pointer, it affects both &lt;code class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;/code&gt; and &lt;code class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;ptr&lt;/span&gt;&lt;/code&gt;.&lt;/p&gt;
 
 &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include&lt;/span&gt; &lt;span class=&quot;cpf&quot;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;
 &lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
@@ -984,25 +1025,30 @@ To get the address of another variable we need use the &amp;amp; operator.&lt;/p
     &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;htr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
     &lt;span class=&quot;n&quot;&gt;ptr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;htr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ptr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;htr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;The value of i %d&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;The value of ptr %d&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ptr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;The value of i %d&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;The value of ptr %d&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ptr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;p&gt;Output:&lt;/p&gt;
 
 &lt;center&gt;
-
 &lt;img src=&quot;https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/Pointer_5.png&quot; alt=&quot;Pointer in C&quot; /&gt;
-
 &lt;/center&gt;
 
-&lt;h2 id=&quot;why-do-we-use-a-pointer&quot;&gt;Why do we use a pointer?&lt;/h2&gt;
-&lt;p&gt;So far, we’ve seen how to use a pointer. now we’re going to see why we use a pointer and where to use the pointer.&lt;/p&gt;
+&lt;hr /&gt;
 
-&lt;h3 id=&quot;passing-a-pointer-as-an-argument&quot;&gt;Passing a pointer as an argument&lt;/h3&gt;
-&lt;p&gt;In general, if you take a look at a function parameter, it usually takes the value as a deep copy or just makes a copy of the value and stores it in a local variable,like &lt;code class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;/code&gt; in this case Because it protects the value from been changed.&lt;/p&gt;
+&lt;h2 id=&quot;why-do-we-use-a-pointer&quot;&gt;Why do we use a pointer?&lt;/h2&gt;
+
+&lt;p&gt;So far, we’ve seen how to use a pointer. Now let’s see why we use pointers and where to use them.&lt;/p&gt;
+
+&lt;h3 id=&quot;passing-a-pointer-as-an-argument&quot;&gt;Passing a Pointer as an Argument&lt;/h3&gt;
+
+&lt;p&gt;In general, if you look at a function parameter, it usually takes the value as a deep copy or just makes a copy of the value and stores it in a local variable, like &lt;code class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;/code&gt; in this case. This protects the value from being changed.&lt;/p&gt;
+
 &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include&lt;/span&gt; &lt;span class=&quot;cpf&quot;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;
 &lt;/span&gt;
 &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;modify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
@@ -1014,23 +1060,21 @@ To get the address of another variable we need use the &amp;amp; operator.&lt;/p
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;modify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;the value of a: %d&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;the value of a: %d&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;In the above code, will the value of a change if we print it after the function call?&lt;/p&gt;
 
-&lt;p&gt;Simply, no.&lt;/p&gt;
+&lt;p&gt;Will the value of &lt;code class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;/code&gt; change after the function call?&lt;br /&gt;
+Simply, no.&lt;/p&gt;
 
 &lt;p&gt;Output:&lt;/p&gt;
 
 &lt;center&gt;
-
 &lt;img src=&quot;https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/Pointer_6.png&quot; alt=&quot;Pointer in C&quot; /&gt;
-
 &lt;/center&gt;
 
-&lt;p&gt;But if we use a pointer, it directly manipulates the memory,allowing us to change the value without needing to return it.The modified value is stored in the same variable.&lt;/p&gt;
+&lt;p&gt;But if we use a pointer, it directly manipulates the memory, allowing us to change the value without needing to return it. The modified value is stored in the same variable.&lt;/p&gt;
 
 &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include&lt;/span&gt; &lt;span class=&quot;cpf&quot;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;
 &lt;/span&gt;
@@ -1043,28 +1087,28 @@ To get the address of another variable we need use the &amp;amp; operator.&lt;/p
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;modify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// passing the address &lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;the value of a: %d&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;the value of a: %d&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Don’t confuse with referencing and dereferencing both look same in this case.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Don’t confuse referencing and dereferencing; both look similar in this case.&lt;/p&gt;
 
 &lt;p&gt;Output:&lt;/p&gt;
 
 &lt;center&gt;
-
 &lt;img src=&quot;https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/Pointer_7.png&quot; alt=&quot;Pointer in C&quot; /&gt;
-
 &lt;/center&gt;
 
-&lt;h2 id=&quot;pointer-for-problem-solving-math-problem&quot;&gt;Pointer for Problem-solving (Math Problem)&lt;/h2&gt;
+&lt;hr /&gt;
 
-&lt;p&gt;Let’s use pointer for problem solving, specifically math problem.&lt;/p&gt;
+&lt;h2 id=&quot;pointer-for-problem-solving-math-problem&quot;&gt;Pointer for Problem-Solving (Math Problem)&lt;/h2&gt;
+
+&lt;p&gt;Let’s use pointers for problem-solving, specifically a math problem.&lt;/p&gt;
 
 &lt;p&gt;We are given an array, and your task is to find the maximum and minimum values using a void function.&lt;/p&gt;
 
-&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Enter&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;82&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;42&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;102&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;94&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;23&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;31&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;49&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
+&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Enter&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;82&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;42&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;102&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;94&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;23&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;31&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;49&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;Largest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;102&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;Smallest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -1073,37 +1117,35 @@ To get the address of another variable we need use the &amp;amp; operator.&lt;/p
 #include&lt;/span&gt; &lt;span class=&quot;cpf&quot;&gt;&amp;lt;limits.h&amp;gt;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;
 #define MAX 10
 &lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;findMaxandMin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[],&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;findMaxandMin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[],&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-
     &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;INT_MIN&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;min&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;INT_MAX&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MAX&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
             &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
             &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;min&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
 &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;largest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;smallest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;largest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;smallest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MAX&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Enter %d numbers: &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MAX&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MAX&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Enter %d numbers: &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MAX&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MAX&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;scanf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%d&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;   
+        &lt;span class=&quot;n&quot;&gt;scanf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%d&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;   
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;findMaxandMin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MAX&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;largest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;smallest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Largest %d&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;largest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Smallest %d&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;smallest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;findMaxandMin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MAX&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;largest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;smallest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Largest %d&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;largest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Smallest %d&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;smallest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -1111,15 +1153,15 @@ To get the address of another variable we need use the &amp;amp; operator.&lt;/p
 &lt;p&gt;Output:&lt;/p&gt;
 
 &lt;center&gt;
-
 &lt;img src=&quot;https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/Pointer_8.png&quot; alt=&quot;Pointer in C&quot; /&gt;
-
 &lt;/center&gt;
 
-&lt;p&gt;So yeah, that’s the power of pointers in C! 
-And this is just the basics we only scratched the surface. There lot more cool stuff coming up with the next blog, like &lt;code class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vs&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pointer&lt;/span&gt;&lt;/code&gt; etc…&lt;/p&gt;
+&lt;hr /&gt;
 
-&lt;p&gt;If you liked this post, feel free to subscribe to my blog for more content like this and if found it would be helpful, consider donating to support my work. Every bit helps and keeps me motivated&lt;/p&gt;
+&lt;p&gt;So yeah, that’s the power of pointers in C!&lt;br /&gt;
+And this is just the basics—we only scratched the surface. There’s a lot more cool stuff coming up in the next blog, like &lt;code class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vs&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pointer&lt;/span&gt;&lt;/code&gt;, etc…&lt;/p&gt;
+
+&lt;p&gt;If you liked this post, feel free to subscribe to my blog for more content like this. If you found it helpful, consider donating to support my work. Every bit helps and keeps me motivated.&lt;/p&gt;
 
 &lt;p&gt;Just Buy me some coffee ☕!&lt;/p&gt;
 

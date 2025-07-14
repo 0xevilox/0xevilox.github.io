@@ -50,8 +50,8 @@
 <meta property="og:title" content="Understanding Bubble Sort: More Than Just Code" />
 <meta name="author" content="Vignesh" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Understand Bubble Sort like never before! With real-world analogies, dry runs, and detailed logic explained clearly for beginners" />
-<meta property="og:description" content="Understand Bubble Sort like never before! With real-world analogies, dry runs, and detailed logic explained clearly for beginners" />
+<meta name="description" content="Understand Bubble Sort like never before! With real-world analogies, dry runs, and detailed logic explained clearly for beginners." />
+<meta property="og:description" content="Understand Bubble Sort like never before! With real-world analogies, dry runs, and detailed logic explained clearly for beginners." />
 <link rel="canonical" href="http://localhost:4000/0xevilox-blog/bubble-sort-explained-for-beginners/" />
 <meta property="og:url" content="http://localhost:4000/0xevilox-blog/bubble-sort-explained-for-beginners/" />
 <meta property="og:site_name" content="Problem Solving with Code" />
@@ -62,7 +62,7 @@
 <meta property="twitter:image" content="http://localhost:4000/0xevilox-blog/assets/Thumnails/bubble-thumbnail-0xevilox.png" />
 <meta property="twitter:title" content="Understanding Bubble Sort: More Than Just Code" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Vignesh"},"dateModified":"2025-07-12T10:30:00+05:30","datePublished":"2025-07-12T10:30:00+05:30","description":"Understand Bubble Sort like never before! With real-world analogies, dry runs, and detailed logic explained clearly for beginners","headline":"Understanding Bubble Sort: More Than Just Code","image":"http://localhost:4000/0xevilox-blog/assets/Thumnails/bubble-thumbnail-0xevilox.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/0xevilox-blog/bubble-sort-explained-for-beginners/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/0xevilox-blog/assets/images/logo.png"},"name":"Vignesh"},"url":"http://localhost:4000/0xevilox-blog/bubble-sort-explained-for-beginners/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Vignesh"},"dateModified":"2025-07-12T10:30:00+05:30","datePublished":"2025-07-12T10:30:00+05:30","description":"Understand Bubble Sort like never before! With real-world analogies, dry runs, and detailed logic explained clearly for beginners.","headline":"Understanding Bubble Sort: More Than Just Code","image":"http://localhost:4000/0xevilox-blog/assets/Thumnails/bubble-thumbnail-0xevilox.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/0xevilox-blog/bubble-sort-explained-for-beginners/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/0xevilox-blog/assets/images/logo.png"},"name":"Vignesh"},"url":"http://localhost:4000/0xevilox-blog/bubble-sort-explained-for-beginners/"}</script>
 <!-- End Jekyll SEO tag -->
 
     
@@ -231,44 +231,54 @@
   <li>How it works step by step</li>
   <li>How to optimize the code</li>
   <li>Why do we do that?</li>
-  <li>How to understand it mathematically.</li>
+  <li>How to understand it mathematically</li>
 </ul>
 
-<p>Before diving into the bubble sort, there’s something important.</p>
+<p>Before diving into bubble sort, there’s something important.</p>
 
 <p>We need to understand <strong>computer science</strong>.</p>
 
 <p><strong>Computer science</strong> is the study of information – how it’s represented and how it’s computed.</p>
 
-<h2 id="why-are-we-learning-the-bubble-sort-and-all-these-basic-algorithms">Why are we learning the bubble sort and all these basic algorithms?</h2>
+<hr />
+
+<h2 id="why-are-we-learning-bubble-sort-and-all-these-basic-algorithms">Why are we learning bubble sort and all these basic algorithms?</h2>
 
 <p>Because <strong>bubble sort</strong> is one of the fundamental algorithms in <strong>computer science</strong>.</p>
 
-<h2 id="so-what-is-an-algorithm">So, What is an algorithm?</h2>
+<hr />
 
-<p>The algorithm is a very, very precise set of instructions designed to solve a computational problem. It takes a set of inputs to produce a set of outputs within a finite amount of time.</p>
+<h2 id="so-what-is-an-algorithm">So, What is an Algorithm?</h2>
+
+<p>An algorithm is a very precise set of instructions designed to solve a computational problem. It takes a set of inputs to produce a set of outputs within a finite amount of time.</p>
 
 <p>And algorithms aren’t just for computers. We actually use algorithms in our daily lives, too.</p>
+
+<hr />
 
 <h3 id="daily-life-analogy-of-algorithms">Daily Life Analogy of Algorithms</h3>
 
 <p>For example: How do you brush your teeth?</p>
 
 <ul>
-  <li>You walk to the bathroom</li>
-  <li>You take the brush and rinse it in the sink</li>
-  <li>Then you apply the toothpaste and brush your teeth</li>
+  <li>Walk to the bathroom</li>
+  <li>Take the brush and rinse it in the sink</li>
+  <li>Apply the toothpaste and brush your teeth</li>
 </ul>
+
+<hr />
 
 <h3 id="precise-vs-vague-instructions">Precise vs Vague Instructions</h3>
 
-<p>But if you notice, these steps are vague. I haven’t given the precise instruction because you use your common sense, but computers don’t.</p>
+<p>But if you notice, these steps are vague. I haven’t given precise instructions because you use your common sense, but computers don’t.</p>
 
-<p>Computers are literally dumb. They need precise, not only just precise, but very accurate instructions.</p>
+<p>Computers are literally dumb. They need not only precise, but very accurate instructions.</p>
 
-<p>If you don’t give the extract steps, the program crashes.</p>
+<p>If you don’t give the exact steps, the program crashes.</p>
 
-<h2 id="how-does-the-precise-algorithm-look">How does the precise algorithm look?</h2>
+<hr />
+
+<h2 id="how-does-a-precise-algorithm-look">How does a precise algorithm look?</h2>
 
 <p>For example: How do you teach your computer to brush your teeth?</p>
 
@@ -282,7 +292,7 @@
   <li>Brush your teeth:
     <ul>
       <li>Upper teeth 4 times</li>
-      <li>lower teeth 4 times, etc..</li>
+      <li>Lower teeth 4 times, etc.</li>
     </ul>
   </li>
   <li>Rinse your mouth with water</li>
@@ -291,63 +301,78 @@
   <li>Done</li>
 </ul>
 
-<p>So this <strong>precise algorithm</strong> looks like</p>
+<p>So this <strong>precise algorithm</strong> looks like this.</p>
 
 <p>But even here, <strong>I’ve left out a few important steps</strong>.</p>
+
+<hr />
 
 <h2 id="what-if-you-didnt-close-the-bathroom-door">What if you didn’t close the bathroom door?</h2>
 
 <p>Someone might walk in and interrupt you – that’s an <strong>unexpected behavior</strong>.</p>
 
-<p>In Programming, we call that a <strong>bug</strong> – when your program doesn’t handle a certain situation correctly and ends up doing <strong>something wrong or even crashing</strong>.</p>
+<p>In programming, we call that a <strong>bug</strong> – when your program doesn’t handle a certain situation correctly and ends up doing something wrong or even crashing.</p>
+
+<hr />
 
 <h2 id="why-am-i-saying-all-this-to-you">Why am I saying all this to you?</h2>
 
 <p>Because you need to think, not just memorize.</p>
 
-<p>Don’t just blindly cram bubble sort for a random tech interview. Instead, understand what it actually is–how it works, why it matters, and what it teaches you about problem-solving.</p>
+<p>Don’t just blindly cram bubble sort for a random tech interview. Instead, understand what it actually is—how it works, why it matters, and what it teaches you about problem-solving.</p>
+
+<hr />
 
 <h2 id="what-is-bubble-sort">What is Bubble Sort?</h2>
-<p>Bubble Sort is a simple sorting algorithm that compares pairs of adjacent elements and swaps them if they are in the wrong order. This process will be repeated until the array is sorted either in increasing or decreasing order.</p>
+
+<p>Bubble Sort is a simple sorting algorithm that compares pairs of adjacent elements and swaps them if they are in the wrong order. This process is repeated until the array is sorted either in increasing or decreasing order.</p>
+
+<hr />
 
 <h2 id="bubble-sort-analogy">Bubble Sort Analogy</h2>
-<p>Imagine in the school, the students are standing in a prayer line or something like a class photo.
-The teacher wants to arrange the students in order based on height. If someone is shorter, they will go in front. Someone is the tallest they will go back.</p>
 
-<p>This will be repeated until the shortest student goes forward and the tallest student goes backward.</p>
+<p>Imagine in school, the students are standing in a prayer line or for a class photo.
+The teacher wants to arrange the students in order based on height. If someone is shorter, they go in front. If someone is the tallest, they go to the back.</p>
+
+<p>This is repeated until the shortest student goes forward and the tallest student goes backward.</p>
 
 <p>In each round, the tallest student “bubbles up” to the end like a bubble rising to the surface in water.</p>
+
+<hr />
 
 <h2 id="how-does-it-work">How does it work?</h2>
 
 <ol>
-  <li>First, let’s take the unsorted data from the user, for example: {6,4,5,3,2,1};</li>
-  <li>Next, compare a pair of adjacent elements; if the first is larger than the second element, swap the elements. i.e, if a<sub>j</sub> &gt; a<sub>j+1</sub>, then swap a<sub>j</sub> and a<sub>j+1</sub>.</li>
+  <li>Take the unsorted data from the user, for example: <code class="language-cpp highlighter-rouge"><span class="p">{</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">}</span></code></li>
+  <li>Compare pairs of adjacent elements; if the first is larger than the second, swap them. i.e., if a<sub>j</sub> &gt; a<sub>j+1</sub>, then swap a<sub>j</sub> and a<sub>j+1</sub>.</li>
   <li>Repeat until the array is sorted.</li>
 </ol>
 
 <p>It looks simple, right? Let’s briefly explain how bubble sort works.</p>
 
-<p>First, let take the unsorted data: {6,4,5,3,2,1}. To sort this list using bubble sort, we need to compare and swap the elements repeatedly until the entire list is in order.</p>
+<p>First, take the unsorted data: <code class="language-cpp highlighter-rouge"><span class="p">{</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">}</span></code>. To sort this list using bubble sort, we need to compare and swap the elements repeatedly until the entire list is in order.</p>
 
-<h2 id="do-we-need-to-use-the-loop">Do we need to use the loop?</h2>
+<hr />
+
+<h2 id="do-we-need-to-use-loops">Do we need to use loops?</h2>
 
 <p>In this case, we use two loops: one is the outer loop and the other is the inner loop.</p>
 
 <p>The outer loop iterates over the elements multiple times, while the inner loop performs the comparisons.</p>
 
-<h2 id="why-are-we-using-the-two-loops">Why are we using the two loops?</h2>
+<hr />
 
-<p>Because we need to compare each and every element, if we use a single loop, only one element gets sorted; the others do not get sorted.</p>
+<h2 id="why-are-we-using-two-loops">Why are we using two loops?</h2>
 
-<p>Let’s start with iteration. In the first iteration, where i = 0 and i &lt; n, we start comparing elements from the beginning.</p>
+<p>Because we need to compare each and every element. If we use a single loop, only one element gets sorted; the others do not.</p>
+
+<p>Let’s start with iteration. In the first iteration, where <code class="language-cpp highlighter-rouge"><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span></code> and <code class="language-cpp highlighter-rouge"><span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span></code>, we start comparing elements from the beginning.</p>
+
 <center>
-
 <img src="https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/first_iteration.png" alt="First iteration of the Bubble Sort algorithm visualized by 0xevilox, showing initial element comparisons and swaps." />
-
 </center>
 
-<p>Let’s go through the first pass of the bubble sort step by step using the list:</p>
+<p>Let’s go through the first pass of bubble sort step by step using the list:</p>
 
 <p>We start with <strong>i = 0 (first iteration)</strong>, and we’ll compare each pair of neighboring elements using an inner loop.</p>
 
@@ -381,35 +406,35 @@ The teacher wants to arrange the students in order based on height. If someone i
   </li>
 </ol>
 
-<p>Now you can clearly see that the <strong>largest element moves towards the end</strong>, just like a <strong>bubble rising to the surface</strong> (when you boil the water). 
-That’s why it’s called <strong>bubble sort.</strong></p>
+<p>Now you can clearly see that the <strong>largest element moves towards the end</strong>, just like a <strong>bubble rising to the surface</strong> (when you boil water).
+That’s why it’s called <strong>bubble sort</strong>.</p>
 
-<p>Next, we move to the second iteration, <strong>i = 1</strong></p>
+<hr />
 
-<p>In the second iteration, we take the list {5,4,3,2,1,6}, which is the result after the first iteration.</p>
+<p>Next, we move to the second iteration, <strong>i = 1</strong>.</p>
+
+<p>In the second iteration, we take the list <code class="language-cpp highlighter-rouge"><span class="p">{</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">}</span></code>, which is the result after the first iteration.</p>
 
 <center>
-
 <img src="https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/second_iteration.png" alt="Second iteration of the Bubble Sort algorithm by 0xevilox, highlighting progress as larger elements bubble toward the end." />
-
 </center>
 
-<p>Here, you can clearly see that the last number will largest. So, in every iteration, the biggest number goes to the last.</p>
+<p>Here, you can clearly see that the last number is the largest. So, in every iteration, the biggest number goes to the last.</p>
 
 <p>Let’s start the second iteration.</p>
 
 <ol>
-  <li>Compare 5 and 4.
+  <li>Compare 5 and 4
     <ul>
       <li>Since 5 is greater than 4, swap the elements.</li>
     </ul>
   </li>
-  <li>Compare 5 and 3.
+  <li>Compare 5 and 3
     <ul>
       <li>Since 5 is greater than 3, swap the elements.</li>
     </ul>
   </li>
-  <li>Compare 5 and 2.
+  <li>Compare 5 and 2
     <ul>
       <li>Since 5 is greater than 2, swap the elements.</li>
     </ul>
@@ -421,34 +446,35 @@ That’s why it’s called <strong>bubble sort.</strong></p>
   </li>
 </ol>
 
-<p>In this case, we don’t compare the 5 and 6 because 6 is already in its correct (sorted) position.</p>
+<p>In this case, we don’t compare 5 and 6 because 6 is already in its correct (sorted) position.</p>
 
-<p>To avoid comparing with elements that are already sorted at the end of the list, we use the condition j &lt; n-i-1 in the inner loop.</p>
+<p>To avoid comparing with elements that are already sorted at the end of the list, we use the condition <code class="language-cpp highlighter-rouge"><span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">-</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span></code> in the inner loop.</p>
 
-<p>This condition ensures that with each iteration of the outer loop (i), we reduce the number of comparisons, since the largest elements have already “bubbled up to the end.</p>
+<p>This condition ensures that with each iteration of the outer loop (<code class="language-cpp highlighter-rouge"><span class="n">i</span></code>), we reduce the number of comparisons, since the largest elements have already “bubbled up” to the end.</p>
 
 <p>For example:</p>
-
 <ul>
-  <li>In the first iteration, i = 0 so the condition becomes j &lt;  n - 0 - 1 -&gt; j &lt; n - 1.</li>
-  <li>In the second iteration, i = 1, so the condition becomes j &lt; n - 1 - 1 -&gt; j &lt; n - 2.</li>
+  <li>In the first iteration, <code class="language-cpp highlighter-rouge"><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span></code> so the condition becomes <code class="language-cpp highlighter-rouge"><span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span></code>.</li>
+  <li>In the second iteration, <code class="language-cpp highlighter-rouge"><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span></code>, so the condition becomes <code class="language-cpp highlighter-rouge"><span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">2</span></code>.</li>
 </ul>
 
-<p>In a nutshell, this <strong>condition helps to avoid unnecessary comparison</strong> within the elements that are already sorted at the end of the list. With each pass, the biggest number settles in place, so the inner loop doesn’t need to check those again.</p>
+<p>In a nutshell, this <strong>condition helps to avoid unnecessary comparisons</strong> with elements that are already sorted at the end of the list. With each pass, the biggest number settles in place, so the inner loop doesn’t need to check those again.</p>
 
-<p>For example: {5,4,3,2,1,6}, where n = 6;</p>
+<p>For example: <code class="language-cpp highlighter-rouge"><span class="p">{</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">}</span></code>, where <code class="language-cpp highlighter-rouge"><span class="n">n</span> <span class="o">=</span> <span class="mi">6</span></code>;</p>
 
-<p>So n-2 = 4, meaning the inner loop only checks up to the 4 index and doesn’t compare with the already sorted 6 at the end.</p>
+<p>So <code class="language-cpp highlighter-rouge"><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">=</span> <span class="mi">4</span></code>, meaning the inner loop only checks up to index 4 and doesn’t compare with the already sorted 6 at the end.</p>
 
 <p>This is a simple form of <strong>optimization in bubble sort</strong>.</p>
 
-<p>In the third iteration, we take the list {4,3,2,1,5,6}, which is the result after the second iteration.</p>
+<hr />
+
+<p>In the third iteration, we take the list <code class="language-cpp highlighter-rouge"><span class="p">{</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">}</span></code>, which is the result after the second iteration.</p>
+
 <center>
-
 <img src="https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/third_iteration.png" alt="Third iteration of the Bubble Sort algorithm by 0xevilox, illustrating fewer swaps as elements near their sorted positions." />
-
 </center>
-<p>Next, in the third iteration.</p>
+
+<p>Next, in the third iteration:</p>
 
 <ol>
   <li>Compare 4 and 3
@@ -456,25 +482,27 @@ That’s why it’s called <strong>bubble sort.</strong></p>
       <li>Since 4 is greater than 3, swap the elements.</li>
     </ul>
   </li>
-  <li>Compare 4 and 2.
+  <li>Compare 4 and 2
     <ul>
       <li>Since 4 is greater than 2, swap the elements.</li>
     </ul>
   </li>
-  <li>Compare 4 and 1.
+  <li>Compare 4 and 1
     <ul>
       <li>Since 4 is greater than 1, swap the elements.</li>
     </ul>
   </li>
 </ol>
 
-<p>In the fourth iteration, we take the list {3,2,1,4,5,6}, which is the result after the third iteration.</p>
+<hr />
+
+<p>In the fourth iteration, we take the list <code class="language-cpp highlighter-rouge"><span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">}</span></code>, which is the result after the third iteration.</p>
+
 <center>
-
 <img src="https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/fourth_iteration.png" alt="Fourth iteration of the Bubble Sort algorithm by 0xevilox, showing minimal comparisons as the list approaches a sorted state." />
-
 </center>
-<p>Next, we compare the elements again in the fourth iteration</p>
+
+<p>Next, we compare the elements again in the fourth iteration:</p>
 
 <ol>
   <li>Compare 3 and 2
@@ -489,15 +517,15 @@ That’s why it’s called <strong>bubble sort.</strong></p>
   </li>
 </ol>
 
-<p>In the fifth iteration, we take the list {2,1,3,4,5,6}, which is the result after the fourth iteration.</p>
+<hr />
+
+<p>In the fifth iteration, we take the list <code class="language-cpp highlighter-rouge"><span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">}</span></code>, which is the result after the fourth iteration.</p>
 
 <center>
-
 <img src="https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/fifith_iteration.png" alt="Fifth and final iteration of the Bubble Sort algorithm by 0xevilox, where the array is fully sorted with no further swaps needed." />
-
 </center>
 
-<p>In the fifth iteration.</p>
+<p>In the fifth iteration:</p>
 
 <ol>
   <li>Compare 2 and 1
@@ -511,14 +539,17 @@ That’s why it’s called <strong>bubble sort.</strong></p>
 
 <p>After there is no swap, the loop gets terminated, and you get the sorted array or list.</p>
 
-<h2 id="final-thoughts">Final Thoughts:</h2>
+<hr />
+
+<h2 id="final-thoughts">Final Thoughts</h2>
+
 <p>So that’s how bubble sort works. I hope you now understand this algorithm better. In the next post, we’ll see how to implement it, analyze its performance, and explore ways to optimize the code.</p>
 
-<p>I also hope this post didn’t just explain what bubble sort is, but also gave you a clearer idea of what an algorithm is and how to think about problem-solving. Remember, a learning algorithm isn’t about memorizing steps or rushing to pass an interview.</p>
+<p>I also hope this post didn’t just explain what bubble sort is, but also gave you a clearer idea of what an algorithm is and how to think about problem-solving. Remember, learning algorithms isn’t about memorizing steps or rushing to pass an interview.</p>
 
 <p>It’s about building your problem-solving mindset and understanding how computers really work.</p>
 
-<p>“Enjoyed this guide? You can support me on Buy Me a Coffee — it helps me keep writing practical tutorials like this.</p>
+<p>Enjoyed this guide? You can support me on Buy Me a Coffee — it helps me keep writing practical tutorials like this.</p>
 
 <center>
 <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="tamilcode" data-color="#5F7FFF" data-emoji="☕" data-font="Lato" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00"></script>
@@ -624,7 +655,7 @@ That’s why it’s called <strong>bubble sort.</strong></p>
     <!-- Categories -->
     
     
-    <a class="smoothscroll badge badge-primary text-capitalize" href="/0xevilox-blog/categories#Alogrithm">Alogrithm</a>                
+    <a class="smoothscroll badge badge-primary text-capitalize" href="/0xevilox-blog/categories#Algorithm">Algorithm</a>                
     
     <a class="smoothscroll badge badge-primary text-capitalize" href="/0xevilox-blog/categories#Problem-Solving">Problem Solving</a>                
     
