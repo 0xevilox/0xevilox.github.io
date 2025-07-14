@@ -189,7 +189,7 @@ int main(void)
     return 0;
 }
 ```
-<img src="./_postImage/function-cpp-factorial-2.png" alt="C++ code defining a function to calculate the factorial of a number using a for loop, with input validation and return value."/>
+<img src="https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/function-cpp-factorial-2.png" alt="C++ code defining a function to calculate the factorial of a number using a for loop, with input validation and return value."/>
 
 ## How Does This Function Work?
 
@@ -203,6 +203,7 @@ Inside that function:
 ## C++ Functions Consist of Three Parts:
 
 1. **Function Declaration:** Define the function before using the function in our program which tells the compiler about function name,return type, and parameter. (it required if writing the function below main) and this called **function prototype**.
+
 ```
 #include <iostream>
 
@@ -220,15 +221,14 @@ int find_factorial(int n)
 {
     // write the program for factorial
 }
-```
 
 2. **Function Definition:** Function is body of function or your actual code
-```
+
 int find_factorial(int n)
 {
     // Function Definition
 }
-```
+
 3. **Function Call:** This is when you use or invoke the function in your main program
 ```
 #include <iostream>
@@ -281,7 +281,7 @@ int find_factorial(int n = 2) // default parameters
 }
 ```
 ### Rules for arguments
-1.**Implicit Conversion:** If you define the parameter as one type `(eg: integer type)` but pass a different type `(eg: floating point)` value and vice versa. C++ automically convert one type to other type `(eg: here float to int (lose the point value))`.
+1.**Implicit Conversion:** If you define the parameter as one type **(eg: integer type)** but pass a different type **(eg: floating point)** value and vice versa. C++ automically convert one type to other type **(eg: here float to int (lose the point value))**.
 ```
 #include <iostream>
 
