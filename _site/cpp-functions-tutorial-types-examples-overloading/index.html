@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="google-site-verification" content="d23w36heNxttMW1A2n8Xle_40llt3-y6T6Dgm2eKRyc" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-cpp.min.js"></script> <!-- for C++ -->
+<style>
+  
+  pre {
+    background-color: #2e2e2e; 
+    color: #f8f8f2;
+    padding: 20px; 
+    border-radius: 8px; 
+    font-family: 'Courier New', Courier, monospace; 
+    font-size: 16px; 
+    line-height: 1.5; 
+    overflow-x: auto; 
+    white-space: pre-wrap; 
+    word-wrap: break-word;
+    border: 1px solid #444; 
+  }
+
+  /* Inline code styling */
+  code {
+    background-color: #333; 
+    color: #f8f8f2; 
+    padding: 0.2em 0.4em; 
+    border-radius: 3px;
+    font-size: 1em; 
+  }
+
+  /* Optional: Add smooth transitions for visual effects */
+  pre, code {
+    transition: all 0.3s ease-in-out;
+  }
+
+  pre:hover, code:hover {
+    background-color: #444; }
+</style>
+
+
+<title>Mastering Functions in C++ with Easy Examples | 0xevilox</title>
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Mastering Functions in C++ with Easy Examples | Problem Solving with Code</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Mastering Functions in C++ with Easy Examples" />
+<meta name="author" content="Vignesh" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Functions in C++ are essential tools for breaking complex problems into manageable blocks. They help you reuse logic and write cleaner, more efficient code." />
+<meta property="og:description" content="Functions in C++ are essential tools for breaking complex problems into manageable blocks. They help you reuse logic and write cleaner, more efficient code." />
+<link rel="canonical" href="http://localhost:4000/0xevilox-blog/cpp-functions-tutorial-types-examples-overloading/" />
+<meta property="og:url" content="http://localhost:4000/0xevilox-blog/cpp-functions-tutorial-types-examples-overloading/" />
+<meta property="og:site_name" content="Problem Solving with Code" />
+<meta property="og:image" content="http://localhost:4000/0xevilox-blog/assets/Thumnails/function-in-cpp-0xevilox.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-07-14T10:55:00+05:30" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4000/0xevilox-blog/assets/Thumnails/function-in-cpp-0xevilox.png" />
+<meta property="twitter:title" content="Mastering Functions in C++ with Easy Examples" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Vignesh"},"dateModified":"2025-07-14T10:55:00+05:30","datePublished":"2025-07-14T10:55:00+05:30","description":"Functions in C++ are essential tools for breaking complex problems into manageable blocks. They help you reuse logic and write cleaner, more efficient code.","headline":"Mastering Functions in C++ with Easy Examples","image":"http://localhost:4000/0xevilox-blog/assets/Thumnails/function-in-cpp-0xevilox.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/0xevilox-blog/cpp-functions-tutorial-types-examples-overloading/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/0xevilox-blog/assets/images/logo.png"},"name":"Vignesh"},"url":"http://localhost:4000/0xevilox-blog/cpp-functions-tutorial-types-examples-overloading/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    
+<link href="/0xevilox-blog/assets/css/prism.css" rel="stylesheet">
+
+<link href="/0xevilox-blog/assets/css/theme.css" rel="stylesheet">
+
+<script src="/0xevilox-blog/assets/js/jquery.min.js"></script>
+
+</head>
+
+
+
+
+<body>
+	<!-- defer loading of font and font awesome -->
+	<noscript id="deferred-styles">
+		<link href="https://fonts.googleapis.com/css?family=Sen:400,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	</noscript>
+
+<!-- Begin Sidebar Navigation
+================================================== -->
+
+<!-- Hamburger Toggle Button (visible on mobile only) -->
+<div class="mobile-nav-toggle" id="mobileNavToggle">&#9776;</div>
+
+<!-- Overlay for background -->
+<div id="mobileOverlay" class="mobile-overlay"></div>
+<div class="mobile-header-title" id="mobileHeaderTitle">
+    <img src="/0xevilox-blog/assets/images/0xevilox.png" alt="0xevilox" />
+</div>
+<!-- Sidebar Navigation (mobile only) -->
+<nav class="mobile-sidebar" id="mobileSidebar">
+  <ul>
+    <li><a href="/0xevilox-blog/">Home</a></li>
+        <li><a href="/0xevilox-blog/privacy-policy">Privacy Policy</a></li>
+         <li><a href="/0xevilox-blog/terms-and-conditions">Terms and Conditions</a></li>
+        <li><a href="/0xevilox-blog/about-me">About Me<span class="badge badge-primary"></a></li>
+        <li><a href="/0xevilox-blog/contact">Contact Me</a></li>
+  </ul>
+</nav>
+<nav class="horizontal-nav" id="navbar">
+    <ul class="nav-list">
+        <li><a href="/0xevilox-blog/">Home</a></li>
+        <li><a href="/0xevilox-blog/privacy-policy">Privacy Policy</a></li>
+         <li><a href="/0xevilox-blog/terms-and-conditions">Terms and Conditions</a></li>
+        <li><a href="/0xevilox-blog/about-me">About Me<span class="badge badge-primary"></a></li>
+        <li><a href="/0xevilox-blog/contact">Contact Me</a></li>
+    </ul>
+</nav>
+
+
+
+
+
+<!-- <script src="/0xevilox-blog/assets/js/lunr.js"></script>
+
+<style>
+    
+</style>
+
+<div class="wrap-search">
+    <div class="d-flex align-items-center ml-auto">
+        <i class="fas fa-search show-search"></i>
+        <form class="bd-search ml-3" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
+            <input type="text" class="form-control bigradius text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Type and enter..."/>
+        </form>
+    </div>
+</div>
+
+<div id="lunrsearchresults">
+    <ul></ul>
+</div>
+
+<script src="/0xevilox-blog/assets/js/lunrsearchengine.js"></script> -->
+<div class="search-box">
+    <script src="/0xevilox-blog/assets/js/lunr.js"></script>
+
+<style>
+    
+</style>
+
+<div class="wrap-search">
+    <div class="d-flex align-items-center ml-auto">
+        <i class="fas fa-search show-search"></i>
+        <form class="bd-search ml-3" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
+            <input type="text" class="form-control bigradius text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Type and enter..."/>
+        </form>
+    </div>
+</div>
+
+<div id="lunrsearchresults">
+    <ul></ul>
+</div>
+
+<script src="/0xevilox-blog/assets/js/lunrsearchengine.js"></script>
+</div>
+
+<!-- End Sidebar Navigation
+================================================== -->
+
+<div class="site-content ">
+
+<div class="container">
+
+   
+   
+
+    <!-- Site Tag
+    ================================================== -->
+    <!--  -->
+
+    <!-- Content
+    ================================================== -->
+    <div class="main-content">
+        <div class="entry-header">
+    <!-- Post Title -->
+    <h1 class="posttitle">Mastering Functions in C++ with Easy Examples</h1>
+    <!-- Author & Date  Box -->
+    
+    
+    <div class="d-flex align-items-center mt-4">
+        <div>
+            
+            <img class="author-thumb" src="/0xevilox-blog/assets/images/Profile_0xevilox.png" alt="Evilox">
+            
+        </div>            
+        <div>
+        Written by Evilox on 
+        <span class="post-date"><time class="post-date" datetime="2025-07-14">14 Jul 2025</time></span>           
+        
+        </div>            
+    </div>
+    
+</div>
+
+<!-- Adsense under title if enabled from _config.yml (change your pub id and slot) -->
+
+
+<!-- Featured Image -->
+
+<div class="entry-featured-image">
+    
+    <img class="featured-image " src="/0xevilox-blog/assets/Thumnails/function-in-cpp-0xevilox.png" alt="Mastering Functions in C++ with Easy Examples">
+    
+</div>
+
+
+<!-- Content -->
+<!-- Post, Page Content
+================================================== -->
+<div class="article-post">
+    <!-- Toc if any -->
+    
+    <!-- End Toc -->
+    <p>Hey Guys, Welcome to this blog.
+Today We’re going to talk about functions in C++</p>
+<ol>
+  <li>What is functions ?</li>
+  <li>How they work ?</li>
+  <li>How you use them to solve the problems in C++</li>
+</ol>
+
+<h2 id="what-is-function-in-c">What is function in C++?</h2>
+
+<p><strong>Function</strong> is a term that came from the <strong>mathematics.</strong></p>
+
+<p><strong>For example:</strong></p>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="n">x</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span>
+
+<span class="n">Here</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+<span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="mi">2</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">=</span> <span class="mi">6</span>
+</code></pre></div></div>
+<p>Here x is parameter. you get value x from the user, and the function computes result based on the value.
+In Programming, it’s similar - but <strong>not all function need to compute the value</strong>. Some just perform actions without returing anything.</p>
+<h2 id="example-print-a-message-using-a-function">Example: Print a Message Using a Function</h2>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">printhappybirthday</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Happy birthday evilox"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>  <span class="c1">// it just print without returning anything</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">printhappybirthday</span><span class="p">();</span> <span class="c1">//calling the function</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>The above function doesn’t compute the value. just print the birthday message.
+In C++, a function is a series of the statement that is grouped together and given name to the function.</p>
+
+<p><img src="https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/function-in-cpp-void-0xevilox.png" alt="C++ example showing a simple function called printhappybirthday that prints a message without returning a value." /></p>
+
+<h2 id="why-use-functions-in-c">Why use functions in C++?</h2>
+
+<ul>
+  <li>To reuse code, so you don’t write the code agian and agian.</li>
+  <li>To break big program into smaller manageable parts.</li>
+</ul>
+
+<h2 id="types-of-functions">Types of functions?</h2>
+
+<p>There are two types of functions:</p>
+
+<p>1.Standard library functions:</p>
+
+<ul>
+  <li>Standard library functions are built-in function and pre-defined function provided by the C++ language.</li>
+  <li>Examples:
+    <ul>
+      <li>sqrt()</li>
+      <li>strlen()</li>
+      <li>sizeof()</li>
+      <li>tolower()</li>
+      <li>toupper()</li>
+    </ul>
+  </li>
+</ul>
+
+<p>2.User-defined functions:</p>
+
+<ul>
+  <li>User-defined functions are custom function created by programmers to solve the specific problem.</li>
+  <li>
+    <p>These helps programmer to organize code and make it reusable.</p>
+  </li>
+  <li>These all are components to built the custom function:
+    <ul>
+      <li>return-type</li>
+      <li>function_name</li>
+      <li>parameters (optional)</li>
+      <li>function body</li>
+      <li>return</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="how-to-write-the-function-in-c">How to write the function in C++?</h2>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">return</span><span class="o">-</span><span class="n">type</span> <span class="nf">function_name</span><span class="p">(</span><span class="n">parameters</span><span class="p">)</span>
+<span class="p">{</span>
+		
+		<span class="c1">//function body</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li>return-type: This is the type of the data the function will return at end.
+    <ul>
+      <li>Common return type:</li>
+    </ul>
+    <ul>
+      <li>Integer types: <code class="language-cpp highlighter-rouge"><span class="kt">short</span></code>,<code class="language-cpp highlighter-rouge"><span class="kt">int</span></code>,<code class="language-cpp highlighter-rouge"><span class="kt">long</span></code>.</li>
+      <li>Floating types: <code class="language-cpp highlighter-rouge"><span class="kt">float</span></code>,<code class="language-cpp highlighter-rouge"><span class="kt">double</span></code>.</li>
+      <li>Character: <code class="language-cpp highlighter-rouge"><span class="kt">char</span></code></li>
+      <li>Boolean: <code class="language-cpp highlighter-rouge"><span class="kt">bool</span></code></li>
+      <li>String: <code class="language-cpp highlighter-rouge"><span class="n">string</span></code></li>
+    </ul>
+  </li>
+  <li>
+    <p>function_name: This is the name given to function.Which need be unique and descriptive.</p>
+  </li>
+  <li>
+    <p>parameters: parameters are dummy variable which helps us to take the input. (optional)</p>
+  </li>
+  <li>Function body: Function body the series of the statements and declaration which used inside the fuction.</li>
+</ol>
+
+<h3 id="rules-for-the-functions-return-type">Rules for the functions return type</h3>
+<ul>
+  <li>You cannot return the array in the function and there are no other restriction</li>
+  <li>Specifying the return type is void means you cannot return anything.</li>
+</ul>
+
+<h2 id="writing-a-function-in-c">Writing a Function in C++</h2>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>  <span class="c1">// accepting the a and b parameter</span>
+<span class="p">{</span>
+
+	<span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span> <span class="c1">// returing the integer</span>
+
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">addnum</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">24</span><span class="p">);</span> <span class="c1">//calling the function and store in the addnum variable</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">addnum</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<p><img src="https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/function-cpp-oxevilox-1.png" alt="C++ code showing a function named add that takes two integers, adds them, and returns the result." /></p>
+
+<p>In the above example:</p>
+<ul>
+  <li>return type: int</li>
+  <li>function name: add</li>
+  <li>parameters: a and b with there type</li>
+  <li>return the integers a + b =&gt; result</li>
+</ul>
+
+<h2 id="solving-real-problem-factorial-using-function">Solving Real Problem: Factorial Using Function</h2>
+
+<h3 id="find-the-factorial-of-given-number">Find the factorial of given number:</h3>
+<p>First, understand what a factorial is.
+In mathematics,a factorial is the product of all integers less than or equal to a non-negative integers. (the symbol is <strong>!</strong>)
+For example:
+<strong>5! = 5 * 4 * 3 * 2 * 1 = 120</strong>
+So here, we can clearly see that numbers loop from <strong>1</strong> to <strong>n</strong>.</p>
+
+<h3 id="alogrithm">Alogrithm:</h3>
+<p><strong>Step 1:</strong> Get the input from the user (i.e <strong>n &gt; 1</strong>).</p>
+
+<p><strong>Step 2:</strong> Create a variable to store the product (i.e <strong>factorial = 1</strong>).</p>
+
+<p><strong>Step 3:</strong> Loop from 1 to n and multiply the number, storing the result in factorial.</p>
+
+<p><strong>Step 4:</strong> Return value at the end (i.e <strong>return factorial</strong>).</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">find_factorial</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">n</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Invalid number"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kt">int</span> <span class="n">factorial</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">factorial</span> <span class="o">*=</span> <span class="n">i</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="k">return</span> <span class="n">factorial</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Enter a number: "</span><span class="p">;</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">num</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">find_factorial</span><span class="p">(</span><span class="n">num</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><img src="https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/function-cpp-factorial-2.png" alt="C++ code defining a function to calculate the factorial of a number using a for loop, with input validation and return value." /></p>
+
+<h2 id="how-does-this-function-work">How Does This Function Work?</h2>
+
+<p>In the <strong>main</strong> function,you get input from user using <strong>cin</strong> and store the value in num variable. Then you pass <strong>num</strong> to the function named find_factorial.</p>
+
+<p>Inside that function:</p>
+<ul>
+  <li>It first check wheather the <strong>n</strong> &gt; 1 if it not it print <strong>invalid number</strong> and stop that function</li>
+  <li>Then calcuate the factorial using the for loop and store the result in the factorial variable.</li>
+  <li>Finally,it returns the <strong>factorial</strong> at end of the function.</li>
+</ul>
+
+<h2 id="c-functions-consist-of-three-parts">C++ Functions Consist of Three Parts:</h2>
+
+<ol>
+  <li><strong>Function Declaration:</strong> Define the function before using the function in our program which tells the compiler about function name,return type, and parameter. (it required if writing the function below main) and this called <strong>function prototype</strong>.</li>
+</ol>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">find_factorial</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">);</span> <span class="c1">//Function Declaration</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// main function</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">find_factorial</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// write the program for factorial</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li><strong>Function Definition:</strong> Function is body of function or your actual code</li>
+</ol>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">find_factorial</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Function Definition</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li><strong>Function Call:</strong> This is when you use or invoke the function in your main program</li>
+</ol>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">find_factorial</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">);</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Enter a number: "</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">num</span><span class="p">;</span>
+    <span class="n">find_factorial</span><span class="p">(</span><span class="n">num</span><span class="p">);</span> <span class="c1">// Function Call or Calling the function</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">find_factorial</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// write the program for factorial</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="function-parameter-and-argument-in-c">Function Parameter and Argument in C++</h2>
+<p>Parameter are dummy variable hold the value passed by the arguments. 
+Arguments are the actual value you give when you calling the function. 
+So basically parameter receive  the data and argument send the data.</p>
+
+<h3 id="default-parameters">Default parameters:</h3>
+<p>Default parameters when no value passed during the function call.
+if you don’t provide the argument, while calling the function default parameters used automatically.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">find_factorial</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// default parameters</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Enter a number: "</span><span class="p">;</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">num</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">find_factorial</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">find_factorial</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">// default parameters</span>
+<span class="p">{</span>
+    <span class="c1">// factorial program</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="rules-for-arguments">Rules for arguments</h3>
+<p>1.<strong>Implicit Conversion:</strong> If you define the parameter as one type <strong>(eg: integer type)</strong> but pass a different type <strong>(eg: floating point)</strong> value and vice versa. C++ automically convert one type to other type <strong>(eg: here float to int (lose the point value))</strong>.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">);</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">float</span> <span class="n">i</span> <span class="o">=</span> <span class="mf">12.3</span><span class="p">;</span>
+    <span class="kt">float</span> <span class="n">j</span> <span class="o">=</span> <span class="mf">13.2</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">add</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><img src="https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/function-cpp-0exvilox-3.png" alt="C++ program demonstrating implicit type conversion where float values are passed to a function expecting int parameters" /></p>
+
+<p>2.<strong>Default arguments promotion:</strong> When you passing the small datatype values it get automatically convert:</p>
+<ul>
+  <li>float is promoted to double</li>
+  <li>char and short are promoted to int</li>
+</ul>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">getNum</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">)</span> <span class="c1">// implict type conversion (default promotion)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">a</span><span class="p">;</span> 
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">char</span> <span class="n">a</span> <span class="o">=</span> <span class="sc">'A'</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">getNum</span><span class="p">(</span><span class="n">a</span><span class="p">);</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">// implict type conversion (default promotion)</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h2 id="function-overloading-in-c">Function Overloading in C++</h2>
+<p>Function Overloading is language feature provide by C++.
+It allow you to define multiple function with the same name but different parameters size or different type of the parameter. 
+If the you need overload the function you need follow two step:</p>
+<ol>
+  <li>Set different parameter for the function. (Multiple dummy variable).</li>
+</ol>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="c1">// 2 parameters</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="n">c</span><span class="p">)</span> <span class="c1">// 3 parameters</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li>Set different datatype or size of datatype for the parameter.</li>
+</ol>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">float</span> <span class="nf">add</span><span class="p">(</span><span class="kt">float</span> <span class="n">a</span><span class="p">,</span> <span class="kt">float</span> <span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="use-case-area-calculation-using-function-overloading">Use Case: Area Calculation Using Function Overloading</h3>
+<p>Find the <strong>area of the rectange and square</strong></p>
+
+<p><img src="https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/square-rectange-cpp-0xevilox.png" alt="Rectange and square image for the algorithm C++" /></p>
+
+<p>Since these concepts are already covered in school, I won’t explain them in detail here.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="c1">// Area of rectange</span>
+<span class="kt">int</span> <span class="nf">area</span><span class="p">(</span><span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">l</span> <span class="o">*</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Area of square</span>
+<span class="kt">float</span> <span class="nf">area</span><span class="p">(</span><span class="kt">int</span> <span class="n">l</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">l</span> <span class="o">*</span> <span class="n">l</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">area</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">area</span><span class="p">(</span><span class="n">l</span><span class="p">,</span><span class="n">b</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><img src="https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/function-cpp-0xevilox-4.png" alt="Rectange and square image for the algorithm C++" /></p>
+
+<h2 id="final-thoughts-on-c-functions">Final Thoughts on C++ Functions:</h2>
+<p>So, I hope you understand how function in C++ Works and we explored what functions are, how to write them, type of functions, function overloading and solving the problem using the functions in C++</p>
+
+<p>Functions help you reuse code, organize logic, and make programs more readable.</p>
+
+<p>Enjoyed this article?
+Support the content by buying a coffee ☕</p>
+
+<center>
+<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="tamilcode" data-color="#5F7FFF" data-emoji="☕" data-font="Lato" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00"></script>
+</center>
+<p><br /></p>
+
+<p>Happy coding! 💻</p>
+
+</div>
+
+<!-- Author Box if enabled from _config.yml -->
+<!-- Author Box -->
+
+
+<div class="authorbox mb-5 mt-5 pt-4 pb-4">   
+    <div class="row">
+        <div class="wrapavname col-md-3 text-center">
+            
+            <img  class="author-thumb" src="/0xevilox-blog/assets/images/Profile_0xevilox.png" alt="Evilox">
+            
+            <p class="mt-4 mb-0 small text-center">
+                <a target="_blank" class="d-inline-block mx-1 text-dark" href="https://0xevilox.github.io/"><i class="fa fa-link"></i></a> 
+                <a target="_blank" class="d-inline-block mx-1 text-dark" href="https://x.com/Mr__Leo__"><i class="fab fa-twitter"></i></a>
+                <a class="d-inline-block mx-1 text-dark" href="mailto:vickypentester@gmail.com"><i class="fa fa-envelope"></i></a>
+            </p>
+        </div>
+        <div class="col-md-9">
+            <h4>Evilox</h4>
+            <p class="mt-3 mb-0">A curious programmer exploring programming, problem solving, and code design. This blog is a place to learn, discover, and share ideas for those who love to grow.</p>
+        </div>
+    </div> 
+</div> 
+
+
+
+<!-- Comments if not disabled with comments: false -->
+<!-- Comments
+================================================== -->
+ 
+<div class="comments mt-5">
+    <button class="btn btn-outline-dark py-2 px-5 d-block w-100 show-comments"><i class="fa fa-comments text-muted"></i> &nbsp; Load Comments</button>         
+    <div id="comments">  
+        <h4 class="mb-4">Comments</h4>                 
+            <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = ''; 
+        var disqus_developer = 0;
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+     
+    <div class="clearfix"></div>              
+    </div>    
+</div>       
+
+
+<!-- Share -->
+<div class="share">
+    <p>
+        Share
+    </p>
+    <ul>
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://twitter.com/intent/tweet?text=Mastering Functions in C++ with Easy Examples&url=http://localhost:4000/0xevilox-blog/cpp-functions-tutorial-types-examples-overloading/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://facebook.com/sharer.php?u=http://localhost:4000/0xevilox-blog/cpp-functions-tutorial-types-examples-overloading/" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/0xevilox-blog/cpp-functions-tutorial-types-examples-overloading/" onclick="window.open(this.href, 'width=550,height=435');return false;">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </li>
+
+    </ul>
+</div>
+
+
+<!-- Related Post -->
+<!-- Related Posts
+================================================== -->
+<div class=" related-posts ">  
+
+    
+    <h2 class="text-center mb-4">Explore more like this</h2>
+    
+    
+    <div class="d-flex justify-content-center align-items-center">
+    
+    <!-- Categories -->
+    
+    
+    <a class="smoothscroll badge badge-primary text-capitalize" href="/0xevilox-blog/categories#C++">C++</a>                
+    
+    <a class="smoothscroll badge badge-primary text-capitalize" href="/0xevilox-blog/categories#Functions">Functions</a>                
+    
+
+    <!-- Tags -->  
+    
+                    
+    <a class="smoothscroll badge badge-primary text-capitalize" href="/0xevilox-blog/tags#Programming">Programming</a>               
+    
+
+    </div>
+
+    
+    
+    
+    <div class="blog-grid-container">
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+        
+        </div>        
+</div>
+
+<!-- Review with LD-JSON, adapt it for your needs if you like, but make sure you test the generated HTML source code first: 
+https://search.google.com/structured-data/testing-tool/u/0/
+================================================== -->
+
+    </div>
+
+    
+    <!-- Newsletter
+    ================================================== -->
+    <div class="newsletter text-center">
+        <span class="h4"><img src="/0xevilox-blog/assets/images/logo.png" class="newsletter-logo" alt="Problem Solving with Code"> &nbsp; Never miss a <b>story</b> from us, subscribe to our newsletter</span>
+        
+        <style>
+  .simple-subscribe-form {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+  }
+
+  .simple-subscribe-form input[type="email"] {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 220px;
+  }
+
+  .simple-subscribe-form input[type="submit"] {
+    padding: 8px 16px;
+    font-size: 14px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .simple-subscribe-form input[type="submit"]:hover {
+    background-color: #333;
+  }
+</style>
+
+<form action="https://api.follow.it/subscription-form/Z0tXLytHU004TjdKT040bXhmem9XTjNiN1hMcUVaRzNyMFhDclo5dGwwRzIxVnhlM0dJK2pmTEVOYi9icnZaNVRMV0wvZGc4VnQ2T2hmc0pHRkZRanFLSC9hSnhZVVo1NHVTYXZCR0tzU2RzWWF6Ymt5TytHMHRkYmZWMGRFUUp8N3JRRGV4Q2k5UFczUXdFOC9lZGRZWTNDVWhBZGlJdjFURGFTd0lvRFl2ST0=/8" method="post" class="simple-subscribe-form">
+  <input type="email" name="email" placeholder="Your e-mail" required>
+  <input type="submit" value="Subscribe">
+</form>
+
+    
+    
+</div>
+
+<!-- Begin Footer
+================================================== -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-12 text-center text-lg-left">
+                Copyright © 2025 0xevilox 
+            </div>
+            <div class="col-md-6 col-sm-12 text-center text-lg-right">    
+                <a target="_blank" href="https://www.0xevilox.github.io">0xevilox</a> by Vignesh
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End Footer
+================================================== -->
+
+</div> <!-- /.site-content -->
+
+<!-- Scripts (if you need bootstrap.js, please add it yourself. I didn't use it for performance reasons, it was not needed in this theme)
+================================================== -->
+
+<script src="/0xevilox-blog/assets/js/prism.js"></script>
+
+<script src="/0xevilox-blog/assets/js/theme.js"></script>
+
+
+
+
+<script id="dsq-count-scr" src="//.disqus.com/count.js"></script>
+
+<script>
+   const toggleBtn = document.getElementById('mobileNavToggle');
+  const sidebar = document.getElementById('mobileSidebar');
+  const overlay = document.getElementById('mobileOverlay');
+
+  toggleBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+    overlay.classList.toggle('active');
+  });
+
+  overlay.addEventListener('click', () => {
+    sidebar.classList.remove('active');
+    overlay.classList.remove('active');
+  });
+</script>
+</body>
+</html>

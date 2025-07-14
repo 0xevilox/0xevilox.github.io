@@ -9,6 +9,10 @@
 <lastmod>2025-07-12T10:30:00+05:30</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/0xevilox-blog/cpp-functions-tutorial-types-examples-overloading/</loc>
+<lastmod>2025-07-14T10:55:00+05:30</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/0xevilox-blog/privacy-policy</loc>
 </url>
 <url>
@@ -40,5 +44,11 @@
 </url>
 <url>
 <loc>http://localhost:4000/0xevilox-blog/category/alogrithm/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/0xevilox-blog/category/c/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/0xevilox-blog/category/functions/</loc>
 </url>
 </urlset>

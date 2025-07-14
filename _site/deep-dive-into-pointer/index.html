@@ -3,8 +3,44 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="google-site-verification" content="d23w36heNxttMW1A2n8Xle_40llt3-y6T6Dgm2eKRyc" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-cpp.min.js"></script> <!-- for C++ -->
+<style>
+  
+  pre {
+    background-color: #2e2e2e; 
+    color: #f8f8f2;
+    padding: 20px; 
+    border-radius: 8px; 
+    font-family: 'Courier New', Courier, monospace; 
+    font-size: 16px; 
+    line-height: 1.5; 
+    overflow-x: auto; 
+    white-space: pre-wrap; 
+    word-wrap: break-word;
+    border: 1px solid #444; 
+  }
 
-<link rel="icon" href="/0xevilox-blog/assets/images/logo.png">
+  /* Inline code styling */
+  code {
+    background-color: #333; 
+    color: #f8f8f2; 
+    padding: 0.2em 0.4em; 
+    border-radius: 3px;
+    font-size: 1em; 
+  }
+
+  /* Optional: Add smooth transitions for visual effects */
+  pre, code {
+    transition: all 0.3s ease-in-out;
+  }
+
+  pre:hover, code:hover {
+    background-color: #444; }
+</style>
+
 
 <title>Deep Dive into Pointers Unleashing the Power of C | 0xevilox</title>
 
@@ -14,8 +50,8 @@
 <meta property="og:title" content="Deep Dive into Pointers Unleashing the Power of C" />
 <meta name="author" content="Vignesh" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Deep Dive into Pointers: Unleashing the Power of C" />
-<meta property="og:description" content="Deep Dive into Pointers: Unleashing the Power of C" />
+<meta name="description" content="In this blog, we will explore the power of pointers in C" />
+<meta property="og:description" content="In this blog, we will explore the power of pointers in C" />
 <link rel="canonical" href="http://localhost:4000/0xevilox-blog/deep-dive-into-pointer/" />
 <meta property="og:url" content="http://localhost:4000/0xevilox-blog/deep-dive-into-pointer/" />
 <meta property="og:site_name" content="Problem Solving with Code" />
@@ -26,7 +62,7 @@
 <meta property="twitter:image" content="http://localhost:4000/0xevilox-blog/assets/Thumnails/pointers.png" />
 <meta property="twitter:title" content="Deep Dive into Pointers Unleashing the Power of C" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Vignesh"},"dateModified":"2025-07-10T08:30:00+05:30","datePublished":"2025-07-10T08:30:00+05:30","description":"Deep Dive into Pointers: Unleashing the Power of C","headline":"Deep Dive into Pointers Unleashing the Power of C","image":"http://localhost:4000/0xevilox-blog/assets/Thumnails/pointers.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/0xevilox-blog/deep-dive-into-pointer/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/0xevilox-blog/assets/images/logo.png"},"name":"Vignesh"},"url":"http://localhost:4000/0xevilox-blog/deep-dive-into-pointer/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Vignesh"},"dateModified":"2025-07-10T08:30:00+05:30","datePublished":"2025-07-10T08:30:00+05:30","description":"In this blog, we will explore the power of pointers in C","headline":"Deep Dive into Pointers Unleashing the Power of C","image":"http://localhost:4000/0xevilox-blog/assets/Thumnails/pointers.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/0xevilox-blog/deep-dive-into-pointer/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/0xevilox-blog/assets/images/logo.png"},"name":"Vignesh"},"url":"http://localhost:4000/0xevilox-blog/deep-dive-into-pointer/"}</script>
 <!-- End Jekyll SEO tag -->
 
     
@@ -202,14 +238,14 @@ Before diving into the pointer, we need to understand some basics about how memo
 Computer Science is all about the study information,computation, and how information is represented, right?
 Information represented in the memory as the binary form</p>
 
-<pre><code class="language-c">for eg:
-int x = 10;
-</code></pre>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">eg</span><span class="o">:</span>
+<span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+</code></pre></div></div>
 
 <p>How would this been respresented in the memory?</p>
 
-<pre><code class="language-c">000001010
-</code></pre>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mo">000001010</span>
+</code></pre></div></div>
 
 <p>Because computers understand only 0s and 1s, everything you see on the computer screen is just information represented in the binary form in memory.
 In modern computers, memory(RAM) is divided into the bytes, which are capable of the storing eight bits of information. Each bytes has the unique address.</p>
@@ -236,25 +272,25 @@ In modern computers, memory(RAM) is divided into the bytes, which are capable of
 
 <p>To declare a pointer in C, we need to specify the datatype, followed by an asterisk, and then the name of the variable.</p>
 
-<pre><code class="language-c">
-datatype *variablename
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">datatype</span> <span class="o">*</span><span class="n">variablename</span>
 
-eg:
-    int *ptr;  // declaring an uninitialized pointer 
-</code></pre>
+<span class="n">eg</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="o">*</span><span class="n">ptr</span><span class="p">;</span>  <span class="c1">// declaring an uninitialized pointer </span>
+</code></pre></div></div>
 
 <h2 id="address-of-operator">Address of operator</h2>
 
 <p>Next, we need to point to an object Here, the object refers to a region of memory or the address of another variable.
 To get the address of another variable we need use the &amp; operator.</p>
 
-<pre><code class="language-c">#include &lt;stdio.h&gt;
-int main(void)
-{
-    int a = 12;
-    int *ptr = &amp;a; // Getting the address of the another variable or object
-}
-</code></pre>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">;</span> <span class="c1">// Getting the address of the another variable or object</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <ul>
   <li><strong>Note</strong>
@@ -268,14 +304,14 @@ int main(void)
 
 <p>Indirection or dereferencing goes to the address and fetches the value.</p>
 
-<pre><code class="language-c">#include &lt;stdio.h&gt;
-int main(void)
-{
-    int a = 12;
-    int *ptr = &amp;a;
-    printf("the value ptr %d\n",*ptr); // dereferencing the value // print 12 
-}
-</code></pre>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">;</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"the value ptr %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="o">*</span><span class="n">ptr</span><span class="p">);</span> <span class="c1">// dereferencing the value // print 12 </span>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <p>Output:</p>
 
@@ -288,15 +324,15 @@ int main(void)
 <p><strong>Note: Don’t confuse with reference and dereference, as both may look similar at times.</strong></p>
 
 <p>By using the dereference operator, we can also reassign the value.</p>
-<pre><code class="language-c">#include &lt;stdio.h&gt;
-int main(void)
-{
-    int a = 12;
-    int *ptr = &amp;a; // assign the value to the pointer 
-    *ptr = 32; // dereference and assign the value 
-}
-</code></pre>
-<p>Now both <code>a</code> and <code>ptr</code> has the same value. So, if change for one, it will affect the other because you are directly manipulating the memory and here the a points to the ptr.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">;</span> <span class="c1">// assign the value to the pointer </span>
+    <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="mi">32</span><span class="p">;</span> <span class="c1">// dereference and assign the value </span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Now both <code class="language-cpp highlighter-rouge"><span class="n">a</span></code> and <code class="language-cpp highlighter-rouge"><span class="n">ptr</span></code> has the same value. So, if change for one, it will affect the other because you are directly manipulating the memory and here the a points to the ptr.</p>
 <center>
 
 <img src="https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/Pointer_3.png" alt="Pointer in C" />
@@ -306,22 +342,22 @@ int main(void)
 <h2 id="pointer-assignment">Pointer Assignment</h2>
 <p>C allows us to assign one pointer to another pointer which copies the value(address) stored in the original pointer.</p>
 
-<pre><code class="language-c">#include &lt;stdio.h&gt;
-int main(void)
-{
-    int i = 12;
-    int *ptr;
-    int *htr;
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="o">*</span><span class="n">ptr</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="o">*</span><span class="n">htr</span><span class="p">;</span>
 
-    ptr = &amp;i;
-    htr = ptr;
+    <span class="n">ptr</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">;</span>
+    <span class="n">htr</span> <span class="o">=</span> <span class="n">ptr</span><span class="p">;</span>
 
-    printf("The address of ptr %p\n",ptr);
-    printf("The address of htr %p\n",htr);
+    <span class="n">printf</span><span class="p">(</span><span class="s">"The address of ptr %p</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">ptr</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"The address of htr %p</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">htr</span><span class="p">);</span>
 
-}
-</code></pre>
-<p>In this code, if you take a look, both <code>ptr</code> and <code>htr</code> have same address that of <code>i</code> which they point to.</p>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>In this code, if you take a look, both <code class="language-cpp highlighter-rouge"><span class="n">ptr</span></code> and <code class="language-cpp highlighter-rouge"><span class="n">htr</span></code> have same address that of <code class="language-cpp highlighter-rouge"><span class="n">i</span></code> which they point to.</p>
 
 <center>
 
@@ -331,20 +367,20 @@ int main(void)
 
 <p>Now both point to same address if change any one of the value it affect 2 object i,ptr.</p>
 
-<pre><code class="language-c">#include &lt;stdio.h&gt;
-int main(void)
-{
-    int i = 12;
-    int *ptr;
-    int *htr;
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="o">*</span><span class="n">ptr</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="o">*</span><span class="n">htr</span><span class="p">;</span>
 
-    ptr = &amp;i;
-    *htr = 100;
+    <span class="n">ptr</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">;</span>
+    <span class="o">*</span><span class="n">htr</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
 
-    printf("The value of i %d\n",i);
-    printf("The value of ptr %d\n",*ptr);
-}
-</code></pre>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"The value of i %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">i</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"The value of ptr %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="o">*</span><span class="n">ptr</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
 <p>Output:</p>
 
 <center>
@@ -357,22 +393,22 @@ int main(void)
 <p>So far, we’ve seen how to use a pointer. now we’re going to see why we use a pointer and where to use the pointer.</p>
 
 <h3 id="passing-a-pointer-as-an-argument">Passing a pointer as an argument</h3>
-<p>In general, if you take a look at a function parameter, it usually takes the value as a deep copy or just makes a copy of the value and stores it in a local variable,like <code>a</code> in this case Because it protects the value from been changed.</p>
-<pre><code class="language-c">#include &lt;stdio.h&gt;
+<p>In general, if you take a look at a function parameter, it usually takes the value as a deep copy or just makes a copy of the value and stores it in a local variable,like <code class="language-cpp highlighter-rouge"><span class="n">a</span></code> in this case Because it protects the value from been changed.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span>
+<span class="kt">void</span> <span class="nf">modify</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">32</span><span class="p">;</span>
+<span class="p">}</span>
 
-void modify(int a)
-{
-    a = 32;
-}
-
-int main(void)
-{
-    int a = 12;
-    modify(a);
-    printf("the value of a: %d\n",a);
-    return 0;
-}
-</code></pre>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+    <span class="n">modify</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"the value of a: %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">a</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
 <p>In the above code, will the value of a change if we print it after the function call?</p>
 
 <p>Simply, no.</p>
@@ -387,21 +423,21 @@ int main(void)
 
 <p>But if we use a pointer, it directly manipulates the memory,allowing us to change the value without needing to return it.The modified value is stored in the same variable.</p>
 
-<pre><code class="language-c">#include &lt;stdio.h&gt;
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span>
+<span class="kt">void</span> <span class="nf">modify</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">a</span><span class="p">)</span> <span class="c1">// accepting the parameter as pointer</span>
+<span class="p">{</span>
+    <span class="o">*</span><span class="n">a</span> <span class="o">=</span> <span class="mi">32</span><span class="p">;</span> <span class="c1">// dereferencing the variable </span>
+<span class="p">}</span>
 
-void modify(int *a) // accepting the parameter as pointer
-{
-    *a = 32; // dereferencing the variable 
-}
-
-int main(void)
-{
-    int a = 12;
-    modify(&amp;a); // passing the address 
-    printf("the value of a: %d\n",a);
-    return 0;
-}
-</code></pre>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+    <span class="n">modify</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">);</span> <span class="c1">// passing the address </span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"the value of a: %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">a</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <p><strong>Note:</strong> Don’t confuse with referencing and dereferencing both look same in this case.</p>
 
@@ -419,49 +455,49 @@ int main(void)
 
 <p>We are given an array, and your task is to find the maximum and minimum values using a void function.</p>
 
-<pre><code class="language-c">Enter a 10 number: 82 42 102 94 23 11 50 31 49 10
-Largest: 102
-Smallest: 10
-</code></pre>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Enter</span> <span class="n">a</span> <span class="mi">10</span> <span class="n">number</span><span class="o">:</span> <span class="mi">82</span> <span class="mi">42</span> <span class="mi">102</span> <span class="mi">94</span> <span class="mi">23</span> <span class="mi">11</span> <span class="mi">50</span> <span class="mi">31</span> <span class="mi">49</span> <span class="mi">10</span>
+<span class="n">Largest</span><span class="o">:</span> <span class="mi">102</span>
+<span class="n">Smallest</span><span class="o">:</span> <span class="mi">10</span>
+</code></pre></div></div>
 
-<pre><code class="language-c">#include &lt;stdio.h&gt;
-#include &lt;limits.h&gt;
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;limits.h&gt;</span><span class="cp">
 #define MAX 10
+</span>
+<span class="kt">void</span> <span class="nf">findMaxandMin</span><span class="p">(</span><span class="kt">int</span> <span class="n">arr</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">n</span><span class="p">,</span><span class="kt">int</span> <span class="o">*</span><span class="n">max</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*</span><span class="n">min</span><span class="p">)</span>
+<span class="p">{</span>
 
-void findMaxandMin(int arr[], int n,int *max, int *min)
-{
+    <span class="o">*</span><span class="n">max</span> <span class="o">=</span> <span class="n">INT_MIN</span><span class="p">;</span>
+    <span class="o">*</span><span class="n">min</span> <span class="o">=</span> <span class="n">INT_MAX</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">MAX</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="o">*</span><span class="n">max</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="o">*</span><span class="n">max</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="o">*</span><span class="n">min</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
 
-    *max = INT_MIN;
-    *min = INT_MAX;
-    for(int i = 0; i &lt; MAX; i++)
-    {
-        if(arr[i] &gt; *max)
-        {
-            *max = arr[i];
-        }
-        else
-        {
-            *min = arr[i];
-        }
-    }
+<span class="p">}</span>
 
-}
-
-int main(void)
-{
-    int largest,smallest;
-    int arr[MAX];
-    printf("Enter %d numbers: ",MAX);
-    for(int i = 0; i &lt; MAX; i++)
-    {
-        scanf("%d",&amp;arr[i]);   
-    }
-    findMaxandMin(arr,MAX,&amp;largest,&amp;smallest);
-    printf("Largest %d\n",largest);
-    printf("Smallest %d\n",smallest);
-    return 0;
-}
-</code></pre>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">largest</span><span class="p">,</span><span class="n">smallest</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">arr</span><span class="p">[</span><span class="n">MAX</span><span class="p">];</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"Enter %d numbers: "</span><span class="p">,</span><span class="n">MAX</span><span class="p">);</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">MAX</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span><span class="o">&amp;</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>   
+    <span class="p">}</span>
+    <span class="n">findMaxandMin</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="n">MAX</span><span class="p">,</span><span class="o">&amp;</span><span class="n">largest</span><span class="p">,</span><span class="o">&amp;</span><span class="n">smallest</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"Largest %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">largest</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"Smallest %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">smallest</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <p>Output:</p>
 
@@ -472,7 +508,7 @@ int main(void)
 </center>
 
 <p>So yeah, that’s the power of pointers in C! 
-And this is just the basics we only scratched the surface. There lot more cool stuff coming up with the next blog, like <code>array vs pointer</code> etc…</p>
+And this is just the basics we only scratched the surface. There lot more cool stuff coming up with the next blog, like <code class="language-cpp highlighter-rouge"><span class="n">array</span> <span class="n">vs</span> <span class="n">pointer</span></code> etc…</p>
 
 <p>If you liked this post, feel free to subscribe to my blog for more content like this and if found it would be helpful, consider donating to support my work. Every bit helps and keeps me motivated</p>
 
@@ -599,6 +635,15 @@ And this is just the basics we only scratched the surface. There lot more cool s
     
     
     <div class="blog-grid-container">
+        
+        
+            
+            
+        
+            
+        
+            
+        
         
         
             
