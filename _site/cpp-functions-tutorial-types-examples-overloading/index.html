@@ -219,198 +219,207 @@
     <!-- Toc if any -->
     
     <!-- End Toc -->
-    <p>Hey Guys, Welcome to this blog.
-Today We’re going to talk about functions in C++</p>
+    <p>Hey Guys, Welcome to this blog.<br />
+Today we’re going to talk about functions in C++:</p>
+
 <ol>
-  <li>What is functions ?</li>
-  <li>How they work ?</li>
-  <li>How you use them to solve the problems in C++</li>
+  <li>What are functions?</li>
+  <li>How do they work?</li>
+  <li>How do you use them to solve problems in C++?</li>
 </ol>
 
-<h2 id="what-is-function-in-c">What is function in C++?</h2>
+<hr />
 
-<p><strong>Function</strong> is a term that came from the <strong>mathematics.</strong></p>
+<h2 id="what-is-a-function-in-c">What is a Function in C++?</h2>
+
+<p>A <strong>function</strong> is a term that comes from <strong>mathematics</strong>.</p>
 
 <p><strong>For example:</strong></p>
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="n">x</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="n">x</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span>
 
 <span class="n">Here</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
 
 <span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="mi">2</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">=</span> <span class="mi">6</span>
 </code></pre></div></div>
-<p>Here x is parameter. you get value x from the user, and the function computes result based on the value.
-In Programming, it’s similar - but <strong>not all function need to compute the value</strong>. Some just perform actions without returing anything.</p>
+
+<p>Here, <code class="language-cpp highlighter-rouge"><span class="n">x</span></code> is a parameter. You get the value of <code class="language-cpp highlighter-rouge"><span class="n">x</span></code> from the user, and the function computes the result based on the value.<br />
+In programming, it’s similar—but <strong>not all functions need to compute a value</strong>. Some just perform actions without returning anything.</p>
+
+<hr />
+
 <h2 id="example-print-a-message-using-a-function">Example: Print a Message Using a Function</h2>
+
 <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
 <span class="kt">void</span> <span class="nf">printhappybirthday</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Happy birthday evilox"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>  <span class="c1">// it just print without returning anything</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Happy birthday evilox"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>  <span class="c1">// just prints without returning anything</span>
 <span class="p">}</span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="n">printhappybirthday</span><span class="p">();</span> <span class="c1">//calling the function</span>
+    <span class="n">printhappybirthday</span><span class="p">();</span> <span class="c1">// calling the function</span>
 <span class="p">}</span>
 </code></pre></div></div>
-<p>The above function doesn’t compute the value. just print the birthday message.
-In C++, a function is a series of the statement that is grouped together and given name to the function.</p>
+
+<p>The above function doesn’t compute a value, it just prints a birthday message.<br />
+In C++, a function is a series of statements grouped together and given a name.</p>
 
 <p><img src="https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/function-in-cpp-void-0xevilox.png" alt="C++ example showing a simple function called printhappybirthday that prints a message without returning a value." /></p>
 
-<h2 id="why-use-functions-in-c">Why use functions in C++?</h2>
+<hr />
+
+<h2 id="why-use-functions-in-c">Why Use Functions in C++?</h2>
 
 <ul>
-  <li>To reuse code, so you don’t write the code agian and agian.</li>
-  <li>To break big program into smaller manageable parts.</li>
+  <li>To reuse code, so you don’t write the same code again and again.</li>
+  <li>To break big programs into smaller, manageable parts.</li>
 </ul>
 
-<h2 id="types-of-functions">Types of functions?</h2>
+<hr />
+
+<h2 id="types-of-functions">Types of Functions</h2>
 
 <p>There are two types of functions:</p>
 
-<p>1.Standard library functions:</p>
-
-<ul>
-  <li>Standard library functions are built-in function and pre-defined function provided by the C++ language.</li>
-  <li>Examples:
+<ol>
+  <li><strong>Standard Library Functions:</strong>
     <ul>
-      <li>sqrt()</li>
-      <li>strlen()</li>
-      <li>sizeof()</li>
-      <li>tolower()</li>
-      <li>toupper()</li>
+      <li>Built-in and pre-defined functions provided by C++.</li>
+      <li>Examples:
+        <ul>
+          <li><code class="language-cpp highlighter-rouge"><span class="n">sqrt</span><span class="p">()</span></code></li>
+          <li><code class="language-cpp highlighter-rouge"><span class="n">strlen</span><span class="p">()</span></code></li>
+          <li><code class="language-cpp highlighter-rouge"><span class="k">sizeof</span><span class="p">()</span></code></li>
+          <li><code class="language-cpp highlighter-rouge"><span class="n">tolower</span><span class="p">()</span></code></li>
+          <li><code class="language-cpp highlighter-rouge"><span class="n">toupper</span><span class="p">()</span></code></li>
+        </ul>
+      </li>
     </ul>
   </li>
-</ul>
-
-<p>2.User-defined functions:</p>
-
-<ul>
-  <li>User-defined functions are custom function created by programmers to solve the specific problem.</li>
-  <li>
-    <p>These helps programmer to organize code and make it reusable.</p>
-  </li>
-  <li>These all are components to built the custom function:
+  <li><strong>User-Defined Functions:</strong>
     <ul>
-      <li>return-type</li>
-      <li>function_name</li>
-      <li>parameters (optional)</li>
-      <li>function body</li>
-      <li>return</li>
+      <li>Custom functions created by programmers to solve specific problems.</li>
+      <li>Help organize code and make it reusable.</li>
     </ul>
   </li>
+</ol>
+
+<p>Components to build a custom function:</p>
+<ul>
+  <li>return type</li>
+  <li>function name</li>
+  <li>parameters (optional)</li>
+  <li>function body</li>
+  <li>return statement</li>
 </ul>
 
-<h2 id="how-to-write-the-function-in-c">How to write the function in C++?</h2>
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="k">return</span><span class="o">-</span><span class="n">type</span> <span class="nf">function_name</span><span class="p">(</span><span class="n">parameters</span><span class="p">)</span>
+<hr />
+
+<h2 id="how-to-write-a-function-in-c">How to Write a Function in C++</h2>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span><span class="o">-</span><span class="n">type</span> <span class="nf">function_name</span><span class="p">(</span><span class="n">parameters</span><span class="p">)</span>
 <span class="p">{</span>
-		
-		<span class="c1">//function body</span>
-
+    <span class="c1">// function body</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <ol>
-  <li>return-type: This is the type of the data the function will return at end.
+  <li><strong>return-type:</strong> The type of data the function will return at the end.
     <ul>
-      <li>Common return type:</li>
+      <li>Common return types:
+        <ul>
+          <li>Integer types: <code class="language-cpp highlighter-rouge"><span class="kt">short</span></code>, <code class="language-cpp highlighter-rouge"><span class="kt">int</span></code>, <code class="language-cpp highlighter-rouge"><span class="kt">long</span></code></li>
+          <li>Floating types: <code class="language-cpp highlighter-rouge"><span class="kt">float</span></code>, <code class="language-cpp highlighter-rouge"><span class="kt">double</span></code></li>
+          <li>Character: <code class="language-cpp highlighter-rouge"><span class="kt">char</span></code></li>
+          <li>Boolean: <code class="language-cpp highlighter-rouge"><span class="kt">bool</span></code></li>
+          <li>String: <code class="language-cpp highlighter-rouge"><span class="n">string</span></code></li>
+        </ul>
+      </li>
     </ul>
-    <ul>
-      <li>Integer types: <code class="language-cpp highlighter-rouge"><span class="kt">short</span></code>,<code class="language-cpp highlighter-rouge"><span class="kt">int</span></code>,<code class="language-cpp highlighter-rouge"><span class="kt">long</span></code>.</li>
-      <li>Floating types: <code class="language-cpp highlighter-rouge"><span class="kt">float</span></code>,<code class="language-cpp highlighter-rouge"><span class="kt">double</span></code>.</li>
-      <li>Character: <code class="language-cpp highlighter-rouge"><span class="kt">char</span></code></li>
-      <li>Boolean: <code class="language-cpp highlighter-rouge"><span class="kt">bool</span></code></li>
-      <li>String: <code class="language-cpp highlighter-rouge"><span class="n">string</span></code></li>
-    </ul>
   </li>
-  <li>
-    <p>function_name: This is the name given to function.Which need be unique and descriptive.</p>
-  </li>
-  <li>
-    <p>parameters: parameters are dummy variable which helps us to take the input. (optional)</p>
-  </li>
-  <li>Function body: Function body the series of the statements and declaration which used inside the fuction.</li>
+  <li><strong>function_name:</strong> The name given to the function. Should be unique and descriptive.</li>
+  <li><strong>parameters:</strong> Dummy variables that help take input (optional).</li>
+  <li><strong>function body:</strong> Series of statements and declarations used inside the function.</li>
 </ol>
 
-<h3 id="rules-for-the-functions-return-type">Rules for the functions return type</h3>
+<h3 id="rules-for-function-return-type">Rules for Function Return Type</h3>
+
 <ul>
-  <li>You cannot return the array in the function and there are no other restriction</li>
-  <li>Specifying the return type is void means you cannot return anything.</li>
+  <li>You cannot return an array from a function, but there are no other restrictions.</li>
+  <li>Specifying the return type as <code class="language-cpp highlighter-rouge"><span class="kt">void</span></code> means you cannot return anything.</li>
 </ul>
+
+<hr />
 
 <h2 id="writing-a-function-in-c">Writing a Function in C++</h2>
 
 <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
-<span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>  <span class="c1">// accepting the a and b parameter</span>
+<span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>  <span class="c1">// accepting a and b as parameters</span>
 <span class="p">{</span>
-
-	<span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span> <span class="c1">// returing the integer</span>
-
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span> <span class="c1">// returning the integer</span>
 <span class="p">}</span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="kt">int</span> <span class="n">addnum</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">24</span><span class="p">);</span> <span class="c1">//calling the function and store in the addnum variable</span>
+    <span class="kt">int</span> <span class="n">addnum</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">24</span><span class="p">);</span> <span class="c1">// calling the function and storing the result</span>
     <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">addnum</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
 <span class="p">}</span>
-
 </code></pre></div></div>
 
 <p><img src="https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/function-cpp-oxevilox-1.png" alt="C++ code showing a function named add that takes two integers, adds them, and returns the result." /></p>
 
 <p>In the above example:</p>
 <ul>
-  <li>return type: int</li>
-  <li>function name: add</li>
-  <li>parameters: a and b with there type</li>
-  <li>return the integers a + b =&gt; result</li>
+  <li>return type: <code class="language-cpp highlighter-rouge"><span class="kt">int</span></code></li>
+  <li>function name: <code class="language-cpp highlighter-rouge"><span class="n">add</span></code></li>
+  <li>parameters: <code class="language-cpp highlighter-rouge"><span class="n">a</span></code> and <code class="language-cpp highlighter-rouge"><span class="n">b</span></code> with their types</li>
+  <li>returns the integer <code class="language-cpp highlighter-rouge"><span class="n">a</span> <span class="o">+</span> <span class="n">b</span></code> as the result</li>
 </ul>
 
-<h2 id="solving-real-problem-factorial-using-function">Solving Real Problem: Factorial Using Function</h2>
+<hr />
 
-<h3 id="find-the-factorial-of-given-number">Find the factorial of given number:</h3>
-<p>First, understand what a factorial is.
-In mathematics,a factorial is the product of all integers less than or equal to a non-negative integers. (the symbol is <strong>!</strong>)
-For example:
-<strong>5! = 5 * 4 * 3 * 2 * 1 = 120</strong>
-So here, we can clearly see that numbers loop from <strong>1</strong> to <strong>n</strong>.</p>
+<h2 id="solving-a-real-problem-factorial-using-a-function">Solving a Real Problem: Factorial Using a Function</h2>
 
-<h3 id="alogrithm">Alogrithm:</h3>
-<p><strong>Step 1:</strong> Get the input from the user (i.e <strong>n &gt; 1</strong>).</p>
+<h3 id="find-the-factorial-of-a-given-number">Find the Factorial of a Given Number</h3>
 
-<p><strong>Step 2:</strong> Create a variable to store the product (i.e <strong>factorial = 1</strong>).</p>
+<p>First, understand what a factorial is.<br />
+In mathematics, a factorial is the product of all integers less than or equal to a non-negative integer (the symbol is <strong>!</strong>).</p>
 
-<p><strong>Step 3:</strong> Loop from 1 to n and multiply the number, storing the result in factorial.</p>
+<p>For example:<br />
+<strong>5! = 5 × 4 × 3 × 2 × 1 = 120</strong></p>
 
-<p><strong>Step 4:</strong> Return value at the end (i.e <strong>return factorial</strong>).</p>
+<p>So, we can clearly see that numbers loop from <strong>1</strong> to <strong>n</strong>.</p>
+
+<h3 id="algorithm">Algorithm</h3>
+
+<ol>
+  <li>Get the input from the user (i.e. <strong>n &gt; 1</strong>).</li>
+  <li>Create a variable to store the product (i.e. <strong>factorial = 1</strong>).</li>
+  <li>Loop from 1 to n and multiply the number, storing the result in factorial.</li>
+  <li>Return the value at the end (i.e. <strong>return factorial</strong>).</li>
+</ol>
 
 <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
 <span class="kt">int</span> <span class="nf">find_factorial</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="k">if</span><span class="p">(</span><span class="n">n</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Invalid number"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
         <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
     <span class="p">}</span>
 
     <span class="kt">int</span> <span class="n">factorial</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-    
-    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="n">factorial</span> <span class="o">*=</span> <span class="n">i</span><span class="p">;</span>
     <span class="p">}</span>
-    
     <span class="k">return</span> <span class="n">factorial</span><span class="p">;</span>
 <span class="p">}</span>
 
@@ -426,90 +435,102 @@ So here, we can clearly see that numbers loop from <strong>1</strong> to <strong
 
 <p><img src="https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/function-cpp-factorial-2.png" alt="C++ code defining a function to calculate the factorial of a number using a for loop, with input validation and return value." /></p>
 
+<hr />
+
 <h2 id="how-does-this-function-work">How Does This Function Work?</h2>
 
-<p>In the <strong>main</strong> function,you get input from user using <strong>cin</strong> and store the value in num variable. Then you pass <strong>num</strong> to the function named find_factorial.</p>
+<p>In the <strong>main</strong> function, you get input from the user using <strong>cin</strong> and store the value in the <code class="language-cpp highlighter-rouge"><span class="n">num</span></code> variable. Then you pass <code class="language-cpp highlighter-rouge"><span class="n">num</span></code> to the function named <code class="language-cpp highlighter-rouge"><span class="n">find_factorial</span></code>.</p>
 
 <p>Inside that function:</p>
 <ul>
-  <li>It first check wheather the <strong>n</strong> &gt; 1 if it not it print <strong>invalid number</strong> and stop that function</li>
-  <li>Then calcuate the factorial using the for loop and store the result in the factorial variable.</li>
-  <li>Finally,it returns the <strong>factorial</strong> at end of the function.</li>
+  <li>It first checks whether <strong>n &gt; 1</strong>. If not, it prints <strong>invalid number</strong> and stops the function.</li>
+  <li>Then it calculates the factorial using a for loop and stores the result in the <code class="language-cpp highlighter-rouge"><span class="n">factorial</span></code> variable.</li>
+  <li>Finally, it returns the <strong>factorial</strong> at the end of the function.</li>
 </ul>
 
-<h2 id="c-functions-consist-of-three-parts">C++ Functions Consist of Three Parts:</h2>
+<hr />
+
+<h2 id="c-functions-consist-of-three-parts">C++ Functions Consist of Three Parts</h2>
 
 <ol>
-  <li><strong>Function Declaration:</strong> Define the function before using the function in our program which tells the compiler about function name,return type, and parameter. (it required if writing the function below main) and this called <strong>function prototype</strong>.</li>
+  <li>
+    <p><strong>Function Declaration:</strong><br />
+Define the function before using it in your program. This tells the compiler about the function name, return type, and parameters. (Required if writing the function below <code class="language-cpp highlighter-rouge"><span class="n">main</span></code>). This is called a <strong>function prototype</strong>.</p>
+
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span> <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+ <span class="kt">int</span> <span class="nf">find_factorial</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">);</span> <span class="c1">// Function Declaration</span>
+
+ <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+ <span class="p">{</span>
+     <span class="c1">// main function</span>
+     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+ <span class="p">}</span>
+
+ <span class="kt">int</span> <span class="nf">find_factorial</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+ <span class="p">{</span>
+     <span class="c1">// write the program for factorial</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>Function Definition:</strong><br />
+The body of the function or your actual code.</p>
+
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kt">int</span> <span class="nf">find_factorial</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+ <span class="p">{</span>
+     <span class="c1">// Function Definition</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>Function Call:</strong><br />
+This is when you use or invoke the function in your main program.</p>
+
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span> <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+ <span class="kt">int</span> <span class="nf">find_factorial</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">);</span>
+
+ <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+ <span class="p">{</span>
+     <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+     <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Enter a number: "</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+     <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">num</span><span class="p">;</span>
+     <span class="n">find_factorial</span><span class="p">(</span><span class="n">num</span><span class="p">);</span> <span class="c1">// Function Call</span>
+     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+ <span class="p">}</span>
+
+ <span class="kt">int</span> <span class="nf">find_factorial</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+ <span class="p">{</span>
+     <span class="c1">// write the program for factorial</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
 </ol>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<hr />
 
-<span class="kt">int</span> <span class="nf">find_factorial</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">);</span> <span class="c1">//Function Declaration</span>
+<h2 id="function-parameters-and-arguments-in-c">Function Parameters and Arguments in C++</h2>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="c1">// main function</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
+<ul>
+  <li><strong>Parameters</strong> are dummy variables that hold the value passed by the arguments.</li>
+  <li><strong>Arguments</strong> are the actual values you give when calling the function.</li>
+  <li>Basically, parameters receive the data and arguments send the data.</li>
+</ul>
 
-<span class="kt">int</span> <span class="nf">find_factorial</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="c1">// write the program for factorial</span>
-<span class="p">}</span>
-</code></pre></div></div>
+<hr />
 
-<ol>
-  <li><strong>Function Definition:</strong> Function is body of function or your actual code</li>
-</ol>
+<h3 id="default-parameters">Default Parameters</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">find_factorial</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="c1">// Function Definition</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<ol>
-  <li><strong>Function Call:</strong> This is when you use or invoke the function in your main program</li>
-</ol>
+<p>Default parameters are used when no value is passed during the function call.<br />
+If you don’t provide an argument while calling the function, the default parameter is used automatically.</p>
 
 <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
-<span class="kt">int</span> <span class="nf">find_factorial</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">);</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Enter a number: "</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">num</span><span class="p">;</span>
-    <span class="n">find_factorial</span><span class="p">(</span><span class="n">num</span><span class="p">);</span> <span class="c1">// Function Call or Calling the function</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kt">int</span> <span class="nf">find_factorial</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="c1">// write the program for factorial</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="function-parameter-and-argument-in-c">Function Parameter and Argument in C++</h2>
-<p>Parameter are dummy variable hold the value passed by the arguments. 
-Arguments are the actual value you give when you calling the function. 
-So basically parameter receive  the data and argument send the data.</p>
-
-<h3 id="default-parameters">Default parameters:</h3>
-<p>Default parameters when no value passed during the function call.
-if you don’t provide the argument, while calling the function default parameters used automatically.</p>
-
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-
-<span class="kt">int</span> <span class="nf">find_factorial</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// default parameters</span>
+<span class="kt">int</span> <span class="nf">find_factorial</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// default parameter</span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
 <span class="p">{</span>
@@ -520,101 +541,119 @@ if you don’t provide the argument, while calling the function default paramete
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="kt">int</span> <span class="nf">find_factorial</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">// default parameters</span>
+<span class="kt">int</span> <span class="nf">find_factorial</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="c1">// factorial program</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<h3 id="rules-for-arguments">Rules for arguments</h3>
-<p>1.<strong>Implicit Conversion:</strong> If you define the parameter as one type <strong>(eg: integer type)</strong> but pass a different type <strong>(eg: floating point)</strong> value and vice versa. C++ automically convert one type to other type <strong>(eg: here float to int (lose the point value))</strong>.</p>
+<hr />
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<h3 id="rules-for-arguments">Rules for Arguments</h3>
 
-<span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">);</span>
+<ol>
+  <li>
+    <p><strong>Implicit Conversion:</strong><br />
+If you define the parameter as one type (e.g., integer) but pass a different type (e.g., floating point), C++ automatically converts one type to another (e.g., float to int, losing the decimal part).</p>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="kt">float</span> <span class="n">i</span> <span class="o">=</span> <span class="mf">12.3</span><span class="p">;</span>
-    <span class="kt">float</span> <span class="n">j</span> <span class="o">=</span> <span class="mf">13.2</span><span class="p">;</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">add</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span> <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
-<span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
+ <span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">);</span>
 
-<p><img src="https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/function-cpp-0exvilox-3.png" alt="C++ program demonstrating implicit type conversion where float values are passed to a function expecting int parameters" /></p>
+ <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+ <span class="p">{</span>
+     <span class="kt">float</span> <span class="n">i</span> <span class="o">=</span> <span class="mf">12.3</span><span class="p">;</span>
+     <span class="kt">float</span> <span class="n">j</span> <span class="o">=</span> <span class="mf">13.2</span><span class="p">;</span>
+     <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">add</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+ <span class="p">}</span>
 
-<p>2.<strong>Default arguments promotion:</strong> When you passing the small datatype values it get automatically convert:</p>
-<ul>
-  <li>float is promoted to double</li>
-  <li>char and short are promoted to int</li>
-</ul>
+ <span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+ <span class="p">{</span>
+     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">getNum</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">)</span> <span class="c1">// implict type conversion (default promotion)</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="n">a</span><span class="p">;</span> 
-<span class="p">}</span>
+    <p><img src="https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/function-cpp-0exvilox-3.png" alt="C++ program demonstrating implicit type conversion where float values are passed to a function expecting int parameters" /></p>
+  </li>
+  <li>
+    <p><strong>Default Argument Promotion:</strong><br />
+When passing small datatype values, they get automatically converted:</p>
+    <ul>
+      <li>float is promoted to double</li>
+      <li>char and short are promoted to int</li>
+    </ul>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="kt">char</span> <span class="n">a</span> <span class="o">=</span> <span class="sc">'A'</span><span class="p">;</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">getNum</span><span class="p">(</span><span class="n">a</span><span class="p">);</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">// implict type conversion (default promotion)</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kt">int</span> <span class="nf">getNum</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">)</span> <span class="c1">// implicit type conversion (default promotion)</span>
+ <span class="p">{</span>
+     <span class="k">return</span> <span class="n">a</span><span class="p">;</span> 
+ <span class="p">}</span>
+
+ <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+ <span class="p">{</span>
+     <span class="kt">char</span> <span class="n">a</span> <span class="o">=</span> <span class="sc">'A'</span><span class="p">;</span>
+     <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">getNum</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">// implicit type conversion (default promotion)</span>
+     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<hr />
+
 <h2 id="function-overloading-in-c">Function Overloading in C++</h2>
-<p>Function Overloading is language feature provide by C++.
-It allow you to define multiple function with the same name but different parameters size or different type of the parameter. 
-If the you need overload the function you need follow two step:</p>
-<ol>
-  <li>Set different parameter for the function. (Multiple dummy variable).</li>
-</ol>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="c1">// 2 parameters</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
-<span class="p">}</span>
+<p>Function Overloading is a language feature provided by C++.<br />
+It allows you to define multiple functions with the same name but different parameter sizes or types.</p>
 
-<span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="n">c</span><span class="p">)</span> <span class="c1">// 3 parameters</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
+<p>To overload a function, you need to follow two steps:</p>
 
 <ol>
-  <li>Set different datatype or size of datatype for the parameter.</li>
+  <li>
+    <p>Set different parameters for the function (multiple dummy variables).</p>
+
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="c1">// 2 parameters</span>
+ <span class="p">{</span>
+     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+ <span class="p">}</span>
+
+ <span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="n">c</span><span class="p">)</span> <span class="c1">// 3 parameters</span>
+ <span class="p">{</span>
+     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span><span class="p">;</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Set different datatypes or sizes of datatypes for the parameters.</p>
+
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+ <span class="p">{</span>
+     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+ <span class="p">}</span>
+
+ <span class="kt">float</span> <span class="nf">add</span><span class="p">(</span><span class="kt">float</span> <span class="n">a</span><span class="p">,</span> <span class="kt">float</span> <span class="n">b</span><span class="p">)</span>
+ <span class="p">{</span>
+     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
 </ol>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kt">float</span> <span class="nf">add</span><span class="p">(</span><span class="kt">float</span> <span class="n">a</span><span class="p">,</span> <span class="kt">float</span> <span class="n">b</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
+<hr />
 
 <h3 id="use-case-area-calculation-using-function-overloading">Use Case: Area Calculation Using Function Overloading</h3>
-<p>Find the <strong>area of the rectange and square</strong></p>
 
-<p><img src="https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/square-rectange-cpp-0xevilox.png" alt="Rectange and square image for the algorithm C++" /></p>
+<p>Find the <strong>area of the rectangle and square</strong>.</p>
+
+<p><img src="https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/square-rectange-cpp-0xevilox.png" alt="Rectangle and square image for the algorithm C++" /></p>
 
 <p>Since these concepts are already covered in school, I won’t explain them in detail here.</p>
 
 <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
-<span class="c1">// Area of rectange</span>
+<span class="c1">// Area of rectangle</span>
 <span class="kt">int</span> <span class="nf">area</span><span class="p">(</span><span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">return</span> <span class="n">l</span> <span class="o">*</span> <span class="n">b</span><span class="p">;</span>
@@ -631,19 +670,25 @@ If the you need overload the function you need follow two step:</p>
     <span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
     <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
     <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">area</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">area</span><span class="p">(</span><span class="n">l</span><span class="p">,</span><span class="n">b</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">area</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p><img src="https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/function-cpp-0xevilox-4.png" alt="Rectange and square image for the algorithm C++" /></p>
+<p><img src="https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/function-cpp-0xevilox-4.png" alt="Rectangle and square image for the algorithm C++" /></p>
 
-<h2 id="final-thoughts-on-c-functions">Final Thoughts on C++ Functions:</h2>
-<p>So, I hope you understand how function in C++ Works and we explored what functions are, how to write them, type of functions, function overloading and solving the problem using the functions in C++</p>
+<hr />
+
+<h2 id="final-thoughts-on-c-functions">Final Thoughts on C++ Functions</h2>
+
+<p>So, I hope you understand how functions in C++ work.<br />
+We explored what functions are, how to write them, types of functions, function overloading, and solving problems using functions in C++.</p>
 
 <p>Functions help you reuse code, organize logic, and make programs more readable.</p>
 
-<p>Enjoyed this article?
+<hr />
+
+<p>Enjoyed this article?<br />
 Support the content by buying a coffee ☕</p>
 
 <center>
