@@ -123,7 +123,7 @@ Because we need to compare each and every element, if we use a single loop, only
 Let's start with iteration. In the first iteration, where i = 0 and i < n, we start comparing elements from the beginning.
 <center>
 
-<img src="./_postImage/first_iteration.png" alt="First iteration of the Bubble Sort algorithm visualized by 0xevilox, showing initial element comparisons and swaps."/>
+<img src="https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/first_iteration.png" alt="First iteration of the Bubble Sort algorithm visualized by 0xevilox, showing initial element comparisons and swaps."/>
 
 </center>
 
@@ -153,7 +153,7 @@ In the second iteration, we take the list {5,4,3,2,1,6}, which is the result aft
 
 <center>
 
-<img src="./_postImage/second_iteration.png" alt="Second iteration of the Bubble Sort algorithm by 0xevilox, highlighting progress as larger elements bubble toward the end."/>
+<img src="https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/second_iteration.png" alt="Second iteration of the Bubble Sort algorithm by 0xevilox, highlighting progress as larger elements bubble toward the end."/>
 
 </center>
 
@@ -193,7 +193,7 @@ This is a simple form of **optimization in bubble sort**.
 In the third iteration, we take the list {4,3,2,1,5,6}, which is the result after the second iteration. 
 <center>
 
-<img src="./_postImage/third_iteration.png" alt="Third iteration of the Bubble Sort algorithm by 0xevilox, illustrating fewer swaps as elements near their sorted positions."/>
+<img src="https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/third_iteration.png" alt="Third iteration of the Bubble Sort algorithm by 0xevilox, illustrating fewer swaps as elements near their sorted positions."/>
 
 </center>
 Next, in the third iteration.
@@ -208,7 +208,7 @@ Next, in the third iteration.
 In the fourth iteration, we take the list {3,2,1,4,5,6}, which is the result after the third iteration.
 <center>
 
-<img src="./_postImage/fourth_iteration.png" alt="Fourth iteration of the Bubble Sort algorithm by 0xevilox, showing minimal comparisons as the list approaches a sorted state."/>
+<img src="https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/fourth_iteration.png" alt="Fourth iteration of the Bubble Sort algorithm by 0xevilox, showing minimal comparisons as the list approaches a sorted state."/>
 
 </center>
 Next, we compare the elements again in the fourth iteration
@@ -222,7 +222,7 @@ In the fifth iteration, we take the list {2,1,3,4,5,6}, which is the result afte
 
 <center>
 
-<img src="./_postImage/fifith_iteration.png" alt="Fifth and final iteration of the Bubble Sort algorithm by 0xevilox, where the array is fully sorted with no further swaps needed."/>
+<img src="https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/fifith_iteration.png" alt="Fifth and final iteration of the Bubble Sort algorithm by 0xevilox, where the array is fully sorted with no further swaps needed."/>
 
 </center>
 
