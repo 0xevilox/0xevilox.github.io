@@ -20,17 +20,21 @@ Today We're going to talk about functions in C++
 **Function** is a term that came from the **mathematics.** 
 
 **For example:**
-```
+<pre><code class="language-cpp">
+
 f(x) = x^2 + 2
 
 Here x = 2;
 
 f(2) = 2^2 + 2 = 4 + 2 = 6
-```
+</code></pre>
+
+
 Here x is parameter. you get value x from the user, and the function computes result based on the value.
 In Programming, it's similar - but **not all function need to compute the value**. Some just perform actions without returing anything.
 ## Example: Print a Message Using a Function
-```
+<pre><code class="language-cpp">
+
 
 #include <iostream>
 
@@ -46,7 +50,7 @@ int main(void)
     printhappybirthday(); //calling the function
 }
 
-```
+</code></pre>
 The above function doesn't compute the value. just print the birthday message.
 In C++, a function is a series of the statement that is grouped together and given name to the function.
 
@@ -112,7 +116,7 @@ return-type function_name(parameters)
 
 ## Writing a Function in C++
 
-```
+<pre><code class="language-cpp">
 #include <iostream>
 
 using namespace std;
@@ -130,7 +134,8 @@ int main(void)
     cout << addnum << endl;
 }
 
-```
+</code></pre>
+
 <img src="https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/function-cpp-oxevilox-1.png" alt="C++ code showing a function named add that takes two integers, adds them, and returns the result."/>
 
 In the above example:
@@ -143,21 +148,22 @@ In the above example:
 
 ### Find the factorial of given number:
 First, understand what a factorial is.
-In mathematics,a factorial is the product of all integers less than or equal to a non-negative integers. (the symbol is `!`)
+In mathematics,a factorial is the product of all integers less than or equal to a non-negative integers. (the symbol is **!**)
 For example:
-`5! = 5 * 4 * 3 * 2 * 1 = 120`
-So here, we can clearly see that numbers loop from `1` to `n`.
+**5! = 5 * 4 * 3 * 2 * 1 = 120**
+So here, we can clearly see that numbers loop from **1** to **n**.
 
 ### Alogrithm:
-**Step 1:** Get the input from the user (i.e `n > 1`).
+**Step 1:** Get the input from the user (i.e **n > 1**).
 
-**Step 2:** Create a variable to store the product (i.e `factorial = 1`).
+**Step 2:** Create a variable to store the product (i.e **factorial = 1**).
 
 **Step 3:** Loop from 1 to n and multiply the number, storing the result in factorial.
 
-**Step 4:** Return value at the end (i.e `return factorial`).
+**Step 4:** Return value at the end (i.e **return factorial**).
 
-```
+<pre><code class="language-cpp">
+
 #include <iostream>
 
 using namespace std;
@@ -188,23 +194,25 @@ int main(void)
     cout << find_factorial(num) << endl;
     return 0;
 }
-```
+</code></pre>
+
 <img src="https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/function-cpp-factorial-2.png" alt="C++ code defining a function to calculate the factorial of a number using a for loop, with input validation and return value."/>
 
 ## How Does This Function Work?
 
-In the `main` function,you get input from user using **cin** and store the value in num variable. Then you pass `num` to the function named find_factorial.
+In the **main** function,you get input from user using **cin** and store the value in num variable. Then you pass **num** to the function named find_factorial.
 
 Inside that function:
-* It first check wheather the `n` > 1 if it not it print **invalid number** and stop that function
+* It first check wheather the **n** > 1 if it not it print **invalid number** and stop that function
 * Then calcuate the factorial using the for loop and store the result in the factorial variable.
-* Finally,it returns the `factorial` at end of the function.
+* Finally,it returns the **factorial** at end of the function.
 
 ## C++ Functions Consist of Three Parts:
 
 1. **Function Declaration:** Define the function before using the function in our program which tells the compiler about function name,return type, and parameter. (it required if writing the function below main) and this called **function prototype**.
 
-```
+<pre><code class="language-cpp">
+
 #include <iostream>
 
 using namespace std;
@@ -221,16 +229,21 @@ int find_factorial(int n)
 {
     // write the program for factorial
 }
+</code></pre>
 
 2. **Function Definition:** Function is body of function or your actual code
+<pre><code class="language-cpp">
 
 int find_factorial(int n)
 {
     // Function Definition
 }
+</code></pre>
 
 3. **Function Call:** This is when you use or invoke the function in your main program
-```
+
+<pre><code class="language-cpp">
+
 #include <iostream>
 
 using namespace std;
@@ -250,7 +263,8 @@ int find_factorial(int n)
 {
     // write the program for factorial
 }
-```
+</code></pre>
+
 ## Function Parameter and Argument in C++
 Parameter are dummy variable hold the value passed by the arguments. 
 Arguments are the actual value you give when you calling the function. 
@@ -259,7 +273,9 @@ So basically parameter receive  the data and argument send the data.
 ### Default parameters:
 Default parameters when no value passed during the function call.
 if you don't provide the argument, while calling the function default parameters used automatically.
-```
+
+<pre><code class="language-cpp">
+
 #include <iostream>
 
 using namespace std;
@@ -279,10 +295,11 @@ int find_factorial(int n = 2) // default parameters
 {
     // factorial program
 }
-```
+</code></pre>
 ### Rules for arguments
 1.**Implicit Conversion:** If you define the parameter as one type **(eg: integer type)** but pass a different type **(eg: floating point)** value and vice versa. C++ automically convert one type to other type **(eg: here float to int (lose the point value))**.
-```
+<pre><code class="language-cpp">
+
 #include <iostream>
 
 using namespace std;
@@ -301,14 +318,15 @@ int add(int a, int b)
 {
     return a + b;
 }
-```
+</code></pre>
+
 
 <img src="https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/function-cpp-0exvilox-3.png" alt="C++ program demonstrating implicit type conversion where float values are passed to a function expecting int parameters"/>
 
 2.**Default arguments promotion:** When you passing the small datatype values it get automatically convert:
-* `float is promoted to double `
-* `char and short are promoted to int`
-```
+* float is promoted to double 
+* char and short are promoted to int
+<pre><code class="language-cpp">
 int getNum(int a) // implict type conversion (default promotion)
 {
     return a; 
@@ -320,13 +338,14 @@ int main(void)
     cout << getNum(a); << endl; // implict type conversion (default promotion)
     return 0;
 }
-```
+</code></pre>
 ## Function Overloading in C++
 Function Overloading is language feature provide by C++.
 It allow you to define multiple function with the same name but different parameters size or different type of the parameter. 
 If the you need overload the function you need follow two step:
 1. Set different parameter for the function. (Multiple dummy variable).
-```
+<pre><code class="language-cpp">
+
 int add(int a, int b) // 2 parameters
 {
     return a + b;
@@ -336,9 +355,11 @@ int add(int a, int b, int c) // 3 parameters
 {
     return a + b + c;
 }
-```
+</code></pre>
+
 2. Set different datatype or size of datatype for the parameter.
-```
+<pre><code class="language-cpp">
+
 int add(int a, int b)
 {
     return a + b;
@@ -348,7 +369,8 @@ float add(float a, float b)
 {
     return a + b;
 }
-```
+</code></pre>
+
 
 ### Use Case: Area Calculation Using Function Overloading
 Find the **area of the rectange and square**
@@ -357,7 +379,8 @@ Find the **area of the rectange and square**
 
 Since these concepts are already covered in school, I won't explain them in detail here.
 
-```
+<pre><code class="language-cpp">
+
 #include <iostream>
 
 using namespace std;
@@ -383,7 +406,7 @@ int main(void)
     return 0;
 }
 
-```
+</code></pre>
 <img src="https://raw.githubusercontent.com/0xevilox/0xevilox.github.io/refs/heads/main/_posts/_postImage/function-cpp-0xevilox-4.png" alt="Rectange and square image for the algorithm C++"/>
 
 ## Final Thoughts on C++ Functions:
