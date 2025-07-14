@@ -9,8 +9,6 @@ tags: [Pointer]
 image: assets/Thumnails/pointers.png
 ---
 
-# Deep Dive into Pointers: Unleashing the Power of C
-
 ## Introduction
 
 Hey Guys, Welcome to this blog!
